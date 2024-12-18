@@ -8,16 +8,18 @@
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         <header>
             @include('partials.header')
         </header>
 
         <main>
-            @yield('content')
+            <div class="container mt-4">
+                @yield('content')
+            </div>
         </main>
 
-        <footer>
+        <footer class="mt-auto">
             @include('partials.footer')
         </footer>
     </body>
