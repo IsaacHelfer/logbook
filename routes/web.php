@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EntriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'index');
+Route::resource('entries', EntriesController::class);

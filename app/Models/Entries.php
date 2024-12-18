@@ -30,16 +30,16 @@ class Entries extends Model
 
     public function aircraft()
     {
-        return $this->hasOne(Aircraft::class);
+        return $this->belongsTo(Aircraft::class);
     }
 
     public function category()
     {
-        return $this->hasOne(FlightCategories::class);
+        return $this->belongsTo(FlightCategories::class);
     }
 
-    public function flightTypes()
+    public function type()
     {
-        return $this->hasOne(FlightTypes::class);
+        return $this->belongsTo(FlightTypes::class);
     }
 }

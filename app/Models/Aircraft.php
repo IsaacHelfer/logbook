@@ -18,16 +18,16 @@ class Aircraft extends Model
 
     public function make()
     {
-        return $this->hasOne(AircraftMakes::class);
+        return $this->belongsTo(AircraftMakes::class);
     }
 
     public function model()
     {
-        return $this->hasOne(AircraftModels::class);
+        return $this->belongsTo(AircraftModels::class);
     }
 
     public function entries()
     {
-        return $this->belongsTo(Entries::class);
+        return $this->hasOne(Entries::class);
     }
 }

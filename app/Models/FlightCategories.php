@@ -15,6 +15,6 @@ class FlightCategories extends Model
 
     public function entries()
     {
-        return $this->belongsTo(Entries::class);
+        return $this->hasMany(Entries::class);
     }
 }

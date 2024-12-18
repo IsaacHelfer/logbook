@@ -15,6 +15,6 @@ class AircraftModels extends Model
 
     public function aircraft()
     {
-        return $this->belongsTo(Aircraft::class);
+        return $this->hasMany(Aircraft::class);
     }
 }
