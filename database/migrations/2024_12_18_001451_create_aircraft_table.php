@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('make_id')->unsigned()->index()->nullable();
             $table->foreign('make_id')->references('id')->on('aircraft_makes')->onUpdate('cascade');
-            $table->integer('model_id')->unsigned()->index()->nullable();
+            $table->bigInteger('model_id')->unsigned()->index()->nullable();
             $table->foreign('model_id')->references('id')->on('aircraft_models')->onUpdate('cascade');
             $table->string('identifier')->unique();
             $table->timestamps();
