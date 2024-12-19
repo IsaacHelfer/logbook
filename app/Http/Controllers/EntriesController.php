@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Aircraft;
 use App\Models\Entries;
+use App\Models\FlightCategories;
+use App\Models\FlightTypes;
 use Dotenv\Parser\Entry;
 use Illuminate\Http\Request;
 
@@ -20,9 +22,15 @@ class EntriesController extends Controller
 
         $aircraft = Aircraft::all();
 
+        $categories = FlightCategories::all();
+
+        $types = FlightTypes::all();
+
         return view('entries.index', compact(
             'entries',
-            'aircraft'
+            'aircraft',
+            'categories',
+            'types'
         ));
     }
 

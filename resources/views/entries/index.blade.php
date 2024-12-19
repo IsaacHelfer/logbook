@@ -3,7 +3,6 @@
 @props(['title'=>'Logbook Entries'])
 
 @section('content')
-
     <div class="row align-items-center">
         <div class="col">
             <h1>{{ $title }}</h1>
