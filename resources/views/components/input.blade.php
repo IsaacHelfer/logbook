@@ -4,9 +4,9 @@
     @endif
 
     @if($type === 'textarea')
-        <textarea id="{{ $id ?? '' }}" class="form-control @if(isset($inputClass)){{ $inputClass }}@endif" rows="{{ $rows ?? '' }}" cols="{{ $cols ?? '' }}"></textarea>
+        <textarea id="{{ $id ?? '' }}" name="{{ $id ?? '' }}" class="form-control @if(isset($inputClass)){{ $inputClass }}@endif" rows="{{ $rows ?? '' }}" cols="{{ $cols ?? '' }}"></textarea>
     @elseif($type === 'select')
-        <select id="{{ $id ?? '' }}" class="form-control @if(isset($inputClass)){{ $inputClass }}@endif" @if(isset($required) && $required) required @endif>
+        <select id="{{ $id ?? '' }}" name="{{ $id ?? '' }}" class="form-control @if(isset($inputClass)){{ $inputClass }}@endif" @if(isset($required) && $required) required @endif>
             @if(isset($default) && $default)
                 <option value="0" selected>Select one</option>
             @endif
@@ -16,6 +16,7 @@
         <input type="{{ $type }}"
                class="form-control @if(isset($inputClass)){{ $inputClass }}@endif"
                id="{{ $id ?? '' }}"
+               name="{{ $id ?? '' }}"
                value="{{ $value ?? '' }}"
                min="{{ $min ?? '' }}"
                placeholder="{{ $placeholder ?? '' }}"

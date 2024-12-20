@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreEntriesRequest;
 use App\Models\Aircraft;
 use App\Models\Entries;
 use App\Models\FlightCategories;
 use App\Models\FlightTypes;
 use Dotenv\Parser\Entry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class EntriesController extends Controller
 {
@@ -48,7 +50,10 @@ class EntriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        $validated = $request->validated();
+        dump($request->all());
+
+//        return redirect()->route('entries.index');
     }
 
     /**
