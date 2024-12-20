@@ -112,11 +112,11 @@
 
                     <div class="col-md-12 mb-3">
                         <label for="remarks" class="form-label">Remarks</label>
-                        <textarea id="remarks" class="form-control"></textarea>
+                        <textarea id="remarks" class="form-control" rows="10" cols="10"></textarea>
                     </div>
 
-                    <div class="col-md-6 offset-md-6 text-end mb-3">
-                        <input type="button" value="Back" class="btn btn-outline-secondary btn-md" />
+                    <div class="col-md-6 offset-md-6 text-end mt-3">
+                        <a href="{{ url()->previous() }}" class="btn btn-outline-secondary btn-md">Back</a>
                         <input type="submit" value="Create" class="btn btn-success ms-2 btn-md" />
                     </div>
                 </div>
