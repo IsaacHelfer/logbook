@@ -48,10 +48,10 @@ class EntriesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreEntriesRequest $request)
     {
-//        $validated = $request->validated();
-        dump($request->all());
+        $validated = $request->validated();
+        dump($validated);
 
 //        return redirect()->route('entries.index');
     }
