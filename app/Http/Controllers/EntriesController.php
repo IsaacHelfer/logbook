@@ -20,17 +20,8 @@ class EntriesController extends Controller
 
         $entries = Entries::all();
 
-        $aircraft = Aircraft::all();
-
-        $categories = FlightCategories::all();
-
-        $types = FlightTypes::all();
-
         return view('entries.index', compact(
-            'entries',
-            'aircraft',
-            'categories',
-            'types'
+            'entries'
         ));
     }
 
@@ -39,7 +30,17 @@ class EntriesController extends Controller
      */
     public function create()
     {
-        //
+        $aircraft = Aircraft::all();
+
+        $categories = FlightCategories::all();
+
+        $types = FlightTypes::all();
+
+        return view('entries.create', compact(
+            'aircraft',
+            'categories',
+            'types'
+        ));
     }
 
     /**

@@ -8,13 +8,14 @@
             <h1>{{ $title }}</h1>
         </div>
         <div class="col-auto text-end">
-            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
+{{--            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">--}}
+{{--                <span>Create Entry</span>--}}
+{{--            </a>--}}
+            <a href="{{ route('entries.create') }}" class="btn btn-primary">
                 <span>Create Entry</span>
             </a>
         </div>
     </div>
-
-    @include('entries.create')
 
     <table class="table mt-3">
         <thead>
