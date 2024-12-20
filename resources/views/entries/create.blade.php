@@ -15,7 +15,7 @@
                 @csrf
 
                 @php
-                    $default_class = 'col-md-6 mb-3';
+                    $default_class = 'col-md-4 mb-3';
                     $number_class = 'number-input';
                 @endphp
 
@@ -30,19 +30,19 @@
                         @endif
                     </x:input>
 
-                    <x:input type="select" id="category" class="{{ $default_class }}" default required>
-                        @if(isset($aircraft))
-                            @if(isset($categories))
-                                @foreach($categories as $category)
-                                    <option value="{{ $category->getKey() }}">{{ $category->category }}</option>
-                                @endforeach
-                            @endif
+                    <x:input type="number" id="total" label="Total Duration" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" required />
+
+                    <x:input type="select" id="category" class="col-md-6 mb-3" default required>
+                        @if(isset($categories))
+                            @foreach($categories as $category)
+                                <option value="{{ $category->getKey() }}">{{ $category->category }}</option>
+                            @endforeach
                         @endif
                     </x:input>
 
-                    <x:input type="number" id="categoryTime" label="Category Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" required />
+                    <x:input type="number" id="categoryTime" label="Category Time" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" required />
 
-                    <x:input type="type" id="type" class="{{ $default_class }}" default required>
+                    <x:input type="select" id="type" class="col-md-6 mb-3" default required>
                         @if(isset($types))
                             @foreach($types as $type)
                                 <option value="{{ $type->getKey() }}">{{ $type->type }}</option>
@@ -50,7 +50,7 @@
                         @endif
                     </x:input>
 
-                    <x:input type="number" id="typeTime" label="Type Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" required />
+                    <x:input type="number" id="typeTime" label="Type Time" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" required />
 
                     <x:input type="number" id="dayTime" label="Day Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" />
 
@@ -64,11 +64,9 @@
 
                     <x:input type="number" id="instrumentApps" label="Instrument Approaches" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" />
 
-                    <x:input type="number" id="dayLandings" label="Day Landings" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" />
+                    <x:input type="number" id="dayLandings" label="Day Landings" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" />
 
-                    <x:input type="number" id="nightLandings" label="Night Landings" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" />
-
-                    <x:input type="number" id="total" label="Total Duration" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" required />
+                    <x:input type="number" id="nightLandings" label="Night Landings" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" />
 
                     <x:input type="textarea" id="remarks" class="col-md-12 mb-3" rows="10" cols="10" />
 
