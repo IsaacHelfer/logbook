@@ -18,8 +18,6 @@ class EntriesController extends Controller
      */
     public function index()
     {
-        // \App\Models\Entries::create(['date'=>date('Y-m-d'),'aircraft_id'=>1,'category_id'=>1,'category_time'=>3.0,'type_id'=>2,'type_time'=>3.0,'night_time'=>3.0,'xc_time'=>3.0,'night_landings'=>2,'total_duration'=>3.0,'remarks'=>'Night xc']);
-
         $entries = Entries::all();
 
         return view('entries.index', compact(
@@ -51,9 +49,9 @@ class EntriesController extends Controller
     public function store(StoreEntriesRequest $request)
     {
         $validated = $request->validated();
-        dump($validated);
+//        dump($validated);
 
-//        return redirect()->route('entries.index');
+        return redirect()->route('entries.index');
     }
 
     /**

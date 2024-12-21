@@ -23,4 +23,10 @@
                @if(isset($required) && $required) required @endif
         />
     @endif
+
+    @if(isset($id))
+        @error($id)
+            <div class="text-danger">{{ $message }}</div>
+        @enderror
+    @endif
 </div>
