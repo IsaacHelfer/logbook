@@ -111,26 +111,30 @@ class EntriesController extends Controller
 
         $entry = Entries::findOrFail($id);
 
-       $entry->update([
-            'date' => $validated['date'],
-            'aircraft_id' => $validated['aircraft'],
-            'category_id' => $validated['category'],
-            'category_time' => $validated['categoryTime'],
-            'type_id' => $validated['type'],
-            'type_time' => $validated['typeTime'],
-            'day_time' => $validated['dayTime'],
-            'night_time' => $validated['nightTime'],
-            'xc_time' => $validated['xcTime'],
-            'actual_instrument' => $validated['actInstrumentTime'],
-            'sim_instrument' => $validated['simInstrumentTime'],
-            'num_instrument_app' => $validated['instrumentApps'],
-            'day_landings' => $validated['dayLandings'],
-            'night_landings' => $validated['nightLandings'],
-            'total_duration' => $validated['total'],
-            'remarks' => $validated['remarks'] ?? '',
-        ]);
+        try {
+            $entry->update([
+                'date' => $validated['date'],
+                'aircraft_id' => $validated['aircraft'],
+                'category_id' => $validated['category'],
+                'category_time' => $validated['categoryTime'],
+                'type_id' => $validated['type'],
+                'type_time' => $validated['typeTime'],
+                'day_time' => $validated['dayTime'],
+                'night_time' => $validated['nightTime'],
+                'xc_time' => $validated['xcTime'],
+                'actual_instrument' => $validated['actInstrumentTime'],
+                'sim_instrument' => $validated['simInstrumentTime'],
+                'num_instrument_app' => $validated['instrumentApps'],
+                'day_landings' => $validated['dayLandings'],
+                'night_landings' => $validated['nightLandings'],
+                'total_duration' => $validated['total'],
+                'remarks' => $validated['remarks'] ?? '',
+            ]);
 
-        return redirect()->route('entries.index');
+            return redirect('/entries')->with('success', 'Edited successfully!');
+        } catch (\Exception $e) {
+            return redirect('/entries')->with('error', 'Error editing!');
+        }
     }
 
     /**

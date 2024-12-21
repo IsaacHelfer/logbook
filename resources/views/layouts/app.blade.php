@@ -17,19 +17,20 @@
 
 {{--    @vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
 </head>
-    <body class="d-flex flex-column min-vh-100">
-        <header>
-            @include('partials.header')
-        </header>
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        @include('partials.header')
+    </header>
 
-        <main>
-            <div class="container mt-4">
-                @yield('content')
-            </div>
-        </main>
+    <main>
+        <div class="container mt-4">
+            @yield('content')
+        </div>
+    </main>
 
-        <footer class="mt-auto">
-            @include('partials.footer')
-        </footer>
-    </body>
+    <footer class="mt-auto">
+        @include('partials.footer')
+    </footer>
+    @include('sweetalert::alert')
+</body>
 </html>
