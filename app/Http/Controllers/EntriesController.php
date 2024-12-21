@@ -147,6 +147,15 @@ class EntriesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Log::debug('test');
+        try {
+            $entry = Entries::findOrFail($id);
+
+            $entry->delete();
+
+            return redirect('/entries')->with('success', 'Entry deleted successfully!');
+        } catch (\Exception $e) {
+            return redirect('/entries')->with('error', 'There was an error deleting the entry!');
+        }
     }
 }

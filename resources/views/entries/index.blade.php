@@ -60,21 +60,25 @@
                                 <td>{{$entry->total_duration}}</td>
                                 <td>{{$entry->remarks}}</td>
                                 <td>
-                                    <div class="row">
-                                        <div class="col-md-4">
+                                    <div class="d-flex justify-content-between gap-2">
+                                        <div>
                                             <x:action route="entries.show" parameters="{{ $entry->getKey() }}">
                                                 <i class="fa-solid fa-eye"></i>
                                             </x:action>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div>
                                             <x:action route="entries.edit" parameters="{{ $entry->getKey() }}">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </x:action>
                                         </div>
-                                        <div class="col-md-4">
-                                            <x:action route="">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </x:action>
+                                        <div>
+                                            <form action="{{ route('entries.destroy', $entry->getKey()) }}" method="POST" id="form-delete-entries">
+                                                @csrf
+                                                @method('DELETE')
+                                                <x:action class="data-delete">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </x:action>
+                                            </form>
                                         </div>
                                     </div>
                                 </td>
@@ -86,4 +90,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $('.data-delete').on('click', function(e) {
+            e.preventDefault();
+            $('#form-delete-entries').submit();
+        })
+    </script>
 @endsection
