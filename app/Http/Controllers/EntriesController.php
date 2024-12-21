@@ -51,26 +51,31 @@ class EntriesController extends Controller
     {
         $validated = $request->validated();
 
-        Entries::create([
-            'date' => $validated['date'],
-            'aircraft_id' => $validated['aircraft'],
-            'category_id' => $validated['category'],
-            'category_time' => $validated['categoryTime'],
-            'type_id' => $validated['type'],
-            'type_time' => $validated['typeTime'],
-            'day_time' => $validated['dayTime'],
-            'night_time' => $validated['nightTime'],
-            'xc_time' => $validated['xcTime'],
-            'actual_instrument' => $validated['actInstrumentTime'],
-            'sim_instrument' => $validated['simInstrumentTime'],
-            'num_instrument_app' => $validated['instrumentApps'],
-            'day_landings' => $validated['dayLandings'],
-            'night_landings' => $validated['nightLandings'],
-            'total_duration' => $validated['total'],
-            'remarks' => $validated['remarks'] ?? '',
-        ]);
+        try {
 
-        return redirect()->route('entries.index');
+            Entries::create([
+                'date' => $validated['date'],
+                'aircraft_id' => $validated['aircraft'],
+                'category_id' => $validated['category'],
+                'category_time' => $validated['categoryTime'],
+                'type_id' => $validated['type'],
+                'type_time' => $validated['typeTime'],
+                'day_time' => $validated['dayTime'],
+                'night_time' => $validated['nightTime'],
+                'xc_time' => $validated['xcTime'],
+                'actual_instrument' => $validated['actInstrumentTime'],
+                'sim_instrument' => $validated['simInstrumentTime'],
+                'num_instrument_app' => $validated['instrumentApps'],
+                'day_landings' => $validated['dayLandings'],
+                'night_landings' => $validated['nightLandings'],
+                'total_duration' => $validated['total'],
+                'remarks' => $validated['remarks'] ?? '',
+            ]);
+
+            return redirect()->route('entries.index')->with('success', 'Entry added successfully!');
+        } catch (\Exception $e) {
+            return redirect('/entries')->with('error', 'There was an error when creating the entry!');
+        }
     }
 
     /**
@@ -131,9 +136,9 @@ class EntriesController extends Controller
                 'remarks' => $validated['remarks'] ?? '',
             ]);
 
-            return redirect('/entries')->with('success', 'Edited successfully!');
+            return redirect('/entries')->with('success', 'Entry edited successfully!');
         } catch (\Exception $e) {
-            return redirect('/entries')->with('error', 'Error editing!');
+            return redirect('/entries')->with('error', 'There was a problem updating the entry!');
         }
     }
 
