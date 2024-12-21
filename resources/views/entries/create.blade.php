@@ -8,6 +8,12 @@
             <div class="col">
                 <h1>Create Logbook Entry</h1>
             </div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url()->previous() }}">Entries</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create Entry</li>
+                </ol>
+            </nav>
         </div>
 
         <div class="card-body">
