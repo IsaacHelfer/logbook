@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@props(['title'=>'Logbook Entries'])
+@props(['title'=>'Logbook'])
 
 @section('content')
     <div class="card p-4">
@@ -67,7 +67,7 @@
                                             </x:action>
                                         </div>
                                         <div class="col-md-4">
-                                            <x:action route="" parameters="{{ $entry->getKey() }}">
+                                            <x:action route="entries.edit" parameters="{{ $entry->getKey() }}">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </x:action>
                                         </div>

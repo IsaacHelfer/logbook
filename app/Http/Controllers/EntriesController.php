@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEntriesRequest;
+use App\Http\Requests\UpdateEntriesRequest;
 use App\Models\Aircraft;
 use App\Models\Entries;
 use App\Models\FlightCategories;
@@ -85,15 +86,51 @@ class EntriesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $entry = Entries::findOrFail($id);
+
+        $aircraft = Aircraft::all();
+
+        $categories = FlightCategories::all();
+
+        $types = FlightTypes::all();
+
+        return view('entries.edit', compact(
+            'entry',
+            'aircraft',
+            'categories',
+            'types'
+        ));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateEntriesRequest $request, string $id)
     {
-        //
+        $validated = $request->validated();
+
+        $entry = Entries::findOrFail($id);
+
+       $entry->update([
+            'date' => $validated['date'],
+            'aircraft_id' => $validated['aircraft'],
+            'category_id' => $validated['category'],
+            'category_time' => $validated['categoryTime'],
+            'type_id' => $validated['type'],
+            'type_time' => $validated['typeTime'],
+            'day_time' => $validated['dayTime'],
+            'night_time' => $validated['nightTime'],
+            'xc_time' => $validated['xcTime'],
+            'actual_instrument' => $validated['actInstrumentTime'],
+            'sim_instrument' => $validated['simInstrumentTime'],
+            'num_instrument_app' => $validated['instrumentApps'],
+            'day_landings' => $validated['dayLandings'],
+            'night_landings' => $validated['nightLandings'],
+            'total_duration' => $validated['total'],
+            'remarks' => $validated['remarks'] ?? '',
+        ]);
+
+        return redirect()->route('entries.index');
     }
 
     /**

@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@props(['title'=>'Logbook Entries'])
-
 @section('content')
     <div class="card p-4">
         <div class="card-header">
@@ -10,7 +8,7 @@
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url()->previous() }}">Entries</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('entries.index') }}">Logbook</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Create Entry</li>
                 </ol>
             </nav>
