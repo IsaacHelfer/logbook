@@ -30,7 +30,7 @@
                         @endif
                     </x:input>
 
-                    <x:input type="number" id="total" label="Total Duration" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" required />
+                    <x:input type="number" id="total" label="Total Duration" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" step="any" required />
 
                     <x:input type="select" id="category" class="col-md-6 mb-3" default required>
                         @if(isset($categories))
@@ -40,7 +40,7 @@
                         @endif
                     </x:input>
 
-                    <x:input type="number" id="categoryTime" label="Category Time" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" required />
+                    <x:input type="number" id="categoryTime" label="Category Time" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" step="any" required />
 
                     <x:input type="select" id="type" class="col-md-6 mb-3" default required>
                         @if(isset($types))
@@ -50,28 +50,28 @@
                         @endif
                     </x:input>
 
-                    <x:input type="number" id="typeTime" label="Type Time" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" required />
+                    <x:input type="number" id="typeTime" label="Type Time" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" step="any" required />
 
-                    <x:input type="number" id="dayTime" label="Day Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" />
+                    <x:input type="number" id="dayTime" label="Day Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" step="any" />
 
-                    <x:input type="number" id="nightTime" label="Night Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" />
+                    <x:input type="number" id="nightTime" label="Night Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" step="any" />
 
-                    <x:input type="number" id="xcTime" label="Cross Country Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" />
+                    <x:input type="number" id="xcTime" label="Cross Country Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" step="any" />
 
-                    <x:input type="number" id="actInstrumentTime" label="Actual Instrument Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" />
+                    <x:input type="number" id="actInstrumentTime" label="Actual Instrument Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" step="any" />
 
-                    <x:input type="number" id="simInstrumentTime" label="Simulated Instrument Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" />
+                    <x:input type="number" id="simInstrumentTime" label="Simulated Instrument Time" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" step="any" />
 
-                    <x:input type="number" id="instrumentApps" label="Instrument Approaches" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" />
+                    <x:input type="number" id="instrumentApps" label="Instrument Approaches" class="{{ $default_class }}" inputClass="{{ $number_class }}" min="0" value="0" step="any" />
 
-                    <x:input type="number" id="dayLandings" label="Day Landings" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" />
+                    <x:input type="number" id="dayLandings" label="Day Landings" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" step="any" />
 
-                    <x:input type="number" id="nightLandings" label="Night Landings" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" />
+                    <x:input type="number" id="nightLandings" label="Night Landings" class="col-md-6 mb-3" inputClass="{{ $number_class }}" min="0" value="0" step="any" />
 
                     <x:input type="textarea" id="remarks" class="col-md-12 mb-3" rows="10" cols="10" />
 
                     <div class="col-md-6 offset-md-6 text-end mt-3">
-                        <a href="{{ url()->previous() }}" class="btn btn-outline-secondary btn-md">Back</a>
+                        <a href="{{ route('entries.index') }}" class="btn btn-outline-secondary btn-md">Back</a>
                         <input type="submit" value="Create" class="btn btn-success ms-2 btn-md" />
                     </div>
                 </div>

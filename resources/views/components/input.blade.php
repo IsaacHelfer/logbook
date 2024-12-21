@@ -20,6 +20,7 @@
                value="{{ $value ?? '' }}"
                min="{{ $min ?? '' }}"
                placeholder="{{ $placeholder ?? '' }}"
+               @if($type === 'number' && isset($step))step="{{ $step }}"@endif
                @if(isset($required) && $required) required @endif
         />
     @endif

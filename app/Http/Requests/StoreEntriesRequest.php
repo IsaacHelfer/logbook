@@ -37,6 +37,7 @@ class StoreEntriesRequest extends FormRequest
             'instrumentApps'    => 'nullable|numeric',
             'dayLandings'       => 'nullable|numeric',
             'nightLandings'     => 'nullable|numeric',
+            'remarks'           => 'nullable',
         ];
     }
 }
