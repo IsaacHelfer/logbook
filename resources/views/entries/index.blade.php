@@ -43,22 +43,22 @@
                     @if(!empty($entries))
                         @foreach($entries as $entry)
                             <tr>
-                                <td>{{$entry->date}}</td>
-                                <td>{{$entry->aircraft->identifier}}</td>
-                                <td>{{$entry->category->category}}</td>
-                                <td>{{$entry->category_time}}</td>
-                                <td>{{$entry->type->type}}</td>
-                                <td>{{$entry->type_time}}</td>
-                                <td>{{$entry->day_time}}</td>
-                                <td>{{$entry->night_time}}</td>
-                                <td>{{$entry->xc_time}}</td>
-                                <td>{{$entry->actual_instrument}}</td>
-                                <td>{{$entry->sim_instrument}}</td>
-                                <td>{{$entry->num_instrument_app}}</td>
-                                <td>{{$entry->day_landings}}</td>
-                                <td>{{$entry->night_landings}}</td>
-                                <td>{{$entry->total_duration}}</td>
-                                <td>{{$entry->remarks}}</td>
+                                <td class="text-truncate">{{$entry->date}}</td>
+                                <td>{{$entry->aircraft->identifier ?? ''}}</td>
+                                <td>{{$entry->category->category ?? ''}}</td>
+                                <td>{{$entry->category_time ?? ''}}</td>
+                                <td>{{$entry->type->type ?? ''}}</td>
+                                <td>{{$entry->type_time ?? ''}}</td>
+                                <td>{{$entry->day_time ?? ''}}</td>
+                                <td>{{$entry->night_time ?? ''}}</td>
+                                <td>{{$entry->xc_time ?? ''}}</td>
+                                <td>{{$entry->actual_instrument ?? ''}}</td>
+                                <td>{{$entry->sim_instrument ?? ''}}</td>
+                                <td>{{$entry->num_instrument_app ?? ''}}</td>
+                                <td>{{$entry->day_landings ?? ''}}</td>
+                                <td>{{$entry->night_landings ?? ''}}</td>
+                                <td>{{$entry->total_duration ?? ''}}</td>
+                                <td class="text-truncate">{{!empty($entry->remarks) ? $entry->remarks : 'N/A'}}</td>
                                 <td>
                                     <div class="d-flex justify-content-between gap-2">
                                         <div>
