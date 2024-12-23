@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aircraft;
+use App\Models\AircraftMakes;
+use App\Models\AircraftModels;
 use App\Models\Entries;
 use Illuminate\Http\Request;
 
@@ -15,8 +17,14 @@ class AircraftController extends Controller
     {
         $aircraft = Aircraft::all();
 
+        $makes = AircraftMakes::all();
+
+        $models = AircraftModels::all();
+
         return view('aircraft.index', compact(
-            'aircraft'
+            'aircraft',
+            'makes',
+            'models'
         ));
     }
 

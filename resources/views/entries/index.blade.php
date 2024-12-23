@@ -87,7 +87,6 @@
             @endif
             </tbody>
         </table>
-
     </div>
 
     <script>
