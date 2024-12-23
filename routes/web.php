@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AircraftController;
 use App\Http\Controllers\EntriesController;
+use App\Http\Controllers\FlightCategoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ Route::view('/', 'index');
 
 Route::resource('entries', EntriesController::class);
 Route::resource('aircraft', AircraftController::class);
+Route::resource('flight_categories', FlightCategoriesController::class);
