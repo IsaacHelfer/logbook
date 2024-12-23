@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAircraftMakesRequest;
+use App\Http\Requests\UpdateAircraftMakesRequest;
+use App\Http\Requests\UpdateAircraftRequest;
 use App\Models\AircraftMakes;
 use Illuminate\Http\Request;
 
@@ -43,39 +45,31 @@ class AircraftMakesController extends Controller
      */
     public function edit(string $id)
     {
-//        $aircraft = Aircraft::findOrFail($id);
-//
-//        $makes = AircraftMakes::all();
-//
-//        $models = AircraftModels::all();
-//
-//        return view('aircraft_manager.aircraft.edit', compact(
-//            'aircraft',
-//            'makes',
-//            'models'
-//        ));
+        $make = AircraftMakes::findOrFail($id);
+
+        return view('aircraft_manager.makes.edit', compact(
+            'make',
+        ));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAircraftRequest $request, string $id)
+    public function update(UpdateAircraftMakesRequest $request, string $id)
     {
-//        $validated = $request->validated();
-//
-//        $aircraft = Aircraft::findOrFail($id);
-//
-//        try {
-//            $aircraft->update([
-//                'make_id' => $validated['make'],
-//                'model_id' => $validated['model'],
-//                'identifier' => $validated['identifier'],
-//            ]);
-//
-//            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft edited successfully!');
-//        } catch (\Exception $e) {
-//            return redirect()->route('aircraft_manager.index')->with('error', 'There was a problem editing the aircraft!');
-//        }
+        $validated = $request->validated();
+
+        $make = AircraftMakes::findOrFail($id);
+
+        try {
+            $make->update([
+                'make' => $validated['make'],
+            ]);
+
+            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft make edited successfully!');
+        } catch (\Exception $e) {
+            return redirect()->route('aircraft_manager.index')->with('error', 'There was a problem editing the aircraft make!');
+        }
     }
 
     /**

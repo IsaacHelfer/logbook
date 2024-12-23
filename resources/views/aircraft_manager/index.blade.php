@@ -74,7 +74,7 @@
                                         <td>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
-                                                    <x:action route="aircraft_manager.makes.create">
+                                                    <x:action route="aircraft_manager.makes.edit" parameters="{{ $make->getKey() }}">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </x:action>
                                                 </div>
