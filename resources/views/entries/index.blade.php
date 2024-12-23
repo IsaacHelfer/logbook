@@ -72,10 +72,10 @@
                                     </x:action>
                                 </div>
                                 <div>
-                                    <form action="{{ route('entries.destroy', $entry->getKey()) }}" method="POST" id="form-delete-entries">
+                                    <form action="{{ route('entries.destroy', $entry->getKey()) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <x:action class="data-delete">
+                                        <x:action class="trash">
                                             <i class="fa-solid fa-trash"></i>
                                         </x:action>
                                     </form>
@@ -90,9 +90,9 @@
     </div>
 
     <script>
-        $('.data-delete').on('click', function(e) {
+        $('.trash').on('click', function(e) {
             e.preventDefault();
-            $('#form-delete-entries').submit();
+            $(this).closest('form').submit();
         })
     </script>
 @endsection
