@@ -6,7 +6,7 @@
     @if($type === 'textarea')
         <textarea id="{{ $id ?? '' }}" name="{{ $id ?? '' }}" class="form-control @if(isset($inputClass)){{ $inputClass }}@endif" rows="{{ $rows ?? '' }}" cols="{{ $cols ?? '' }}">{{ $slot }}</textarea>
     @elseif($type === 'select')
-        <select id="{{ $id ?? '' }}" name="{{ $id ?? '' }}" class="form-control @if(isset($inputClass)){{ $inputClass }}@endif" @if(isset($required) && $required) required @endif>
+        <select id="{{ $id ?? '' }}" name="{{ $id ?? '' }}" class="form-control @if(isset($inputClass)){{ $inputClass }}@endif select" @if(isset($required) && $required) required @endif>
             @if(isset($default) && $default)
                 <option value="0" selected>Select one</option>
             @endif
@@ -31,3 +31,11 @@
         @enderror
     @endif
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('.select').select2({
+            theme: "bootstrap-5"
+        });
+    });
+</script>
