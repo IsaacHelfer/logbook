@@ -15,7 +15,7 @@
         </div>
 
         <div class="card-body">
-            <form action="{{ route('aircraft_manager.update', $aircraft->getKey()) }}" method="POST">
+            <form action="{{ route('aircraft_manager.aircraft.update', $aircraft->getKey()) }}" method="POST">
                 @csrf
 
                 @method('PUT')
