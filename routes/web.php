@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AircraftController;
 use App\Http\Controllers\AircraftMakesController;
+use App\Http\Controllers\AircraftModelsController;
 use App\Http\Controllers\EntriesController;
 use App\Http\Controllers\FlightCategoriesController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,7 @@ Route::resource('/aircraft_manager', AircraftController::class)->only(['index'])
 Route::prefix('aircraft_manager')->name('aircraft_manager.')->group(function () {
     Route::resource('/aircraft', AircraftController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
     Route::resource('/makes', AircraftMakesController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
+    Route::resource('/models', AircraftModelsController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
 });
 
 Route::resource('flight_categories', FlightCategoriesController::class);

@@ -98,7 +98,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         Models
-                        <x-action>
+                        <x-action route="aircraft_manager.models.create">
                             <i class="fa-solid fa-square-plus fa-xs"></i>
                         </x-action>
                     </h5>
@@ -118,12 +118,12 @@
                                         <td>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
-                                                    <x:action route="" parameters="">
+                                                    <x:action route="aircraft_manager.models.edit" parameters="{{ $model->getKey() }}">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </x:action>
                                                 </div>
                                                 <div>
-{{--                                                    <x:action action="{{ route('aircraft_manager.models.destroy', $model->getKey()) }}" delete />--}}
+                                                    <x:action action="{{ route('aircraft_manager.models.destroy', $model->getKey()) }}" delete />
                                                 </div>
                                             </div>
                                         </td>
