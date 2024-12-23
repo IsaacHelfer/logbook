@@ -39,7 +39,7 @@ class AircraftController extends Controller
 
         $models = AircraftModels::all();
 
-        return view('aircraft_manager.create', compact(
+        return view('aircraft_manager.aircraft.create', compact(
             'makes',
             'models'
         ));
@@ -84,7 +84,7 @@ class AircraftController extends Controller
 
         $models = AircraftModels::all();
 
-        return view('aircraft_manager.edit', compact(
+        return view('aircraft_manager.aircraft.edit', compact(
             'aircraft',
             'makes',
             'models'

@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index');
 
-Route::resource('entries', EntriesController::class);
-Route::resource('aircraft_manager', AircraftController::class);
+Route::resource('/entries', EntriesController::class);
+
+Route::resource('/aircraft_manager', AircraftController::class)->only(['index']);
+
+Route::prefix('aircraft_manager')->name('aircraft_manager.')->group(function () {
+    Route::resource('/aircraft', AircraftController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
+});
+
 Route::resource('flight_categories', FlightCategoriesController::class);

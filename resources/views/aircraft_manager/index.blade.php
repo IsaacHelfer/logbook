@@ -4,12 +4,13 @@
     <h1>Aircraft Manager</h1>
 
     <div class="row mt-3">
+        <!-- aircraft -->
         <div class="col-md-12 mb-3">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">
                         Aircraft
-                        <x-action route="aircraft_manager.create">
+                        <x-action route="aircraft_manager.aircraft.create">
                             <i class="fa-solid fa-square-plus fa-xs"></i>
                         </x-action>
                     </h5>
@@ -29,12 +30,12 @@
                                             <td>
                                                 <div class="d-flex justify-content-end gap-2">
                                                     <div>
-                                                        <x:action route="aircraft_manager.edit" parameters="{{ $ac->getKey() }}">
+                                                        <x:action route="aircraft_manager.aircraft.edit" parameters="{{ $ac->getKey() }}">
                                                             <i class="fa-solid fa-pen-to-square"></i>
                                                         </x:action>
                                                     </div>
                                                     <div>
-                                                        <form action="{{ route('aircraft_manager.destroy', $ac->getKey()) }}" method="POST" id="form-delete-entries">
+                                                        <form action="{{ route('aircraft_manager.aircraft.destroy', $ac->getKey()) }}" method="POST" id="form-delete-entries">
                                                             @csrf
                                                             @method('DELETE')
                                                             <x:action class="data-delete">
@@ -53,6 +54,7 @@
                 </div>
             </div>
         </div>
+        <!-- makes -->
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
@@ -102,6 +104,7 @@
                 </div>
             </div>
         </div>
+        <!-- models -->
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
