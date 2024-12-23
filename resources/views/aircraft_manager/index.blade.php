@@ -34,7 +34,7 @@
                                                         </x:action>
                                                     </div>
                                                     <div>
-                                                        <x:action route="" parameters="{{ $ac->getKey() }}">
+                                                        <x:action route="aircraft_manager.edit" parameters="{{ $ac->getKey() }}">
                                                             <i class="fa-solid fa-pen-to-square"></i>
                                                         </x:action>
                                                     </div>

@@ -74,7 +74,7 @@
                     <x:input type="select" id="type" class="col-md-6 mb-3" default required>
                         @if(isset($types))
                             @foreach($types as $type)
-                                <option value="{{ $type->getKey() }}"  @if($type->getKey() === $entry->type_id) selected @endif>{{ $type->type }}</option>
+                                <option value="{{ $type->getKey() }}" @if($type->getKey() === $entry->type_id) selected @endif>{{ $type->type }}</option>
                             @endforeach
                         @endif
                     </x:input>

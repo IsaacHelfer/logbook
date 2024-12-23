@@ -74,7 +74,7 @@ class EntriesController extends Controller
 
             return redirect()->route('entries.index')->with('success', 'Entry added successfully!');
         } catch (\Exception $e) {
-            return redirect('/entries')->with('error', 'There was an error when creating the entry!');
+            return redirect()->route('entries.index')->with('error', 'There was an error creating the entry!');
         }
     }
 
@@ -136,9 +136,9 @@ class EntriesController extends Controller
                 'remarks' => $validated['remarks'] ?? '',
             ]);
 
-            return redirect('/entries')->with('success', 'Entry edited successfully!');
+            return redirect()->route('entries.index')->with('success', 'Entry edited successfully!');
         } catch (\Exception $e) {
-            return redirect('/entries')->with('error', 'There was a problem updating the entry!');
+            return redirect()->route('entries.index')->with('error', 'There was a problem editing the entry!');
         }
     }
 
@@ -153,9 +153,9 @@ class EntriesController extends Controller
 
             $entry->delete();
 
-            return redirect('/entries')->with('success', 'Entry deleted successfully!');
+            return redirect()->route('entries.index')->with('success', 'Entry deleted successfully!');
         } catch (\Exception $e) {
-            return redirect('/entries')->with('error', 'There was an error deleting the entry!');
+            return redirect()->route('entries.index')->with('error', 'There was an error deleting the entry!');
         }
     }
 }

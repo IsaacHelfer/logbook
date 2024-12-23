@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAircraftRequest;
+use App\Http\Requests\UpdateAircraftRequest;
 use App\Models\Aircraft;
 use App\Models\AircraftMakes;
 use App\Models\AircraftModels;
@@ -60,7 +61,7 @@ class AircraftController extends Controller
 
             return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft added successfully!');
         } catch (\Exception $e) {
-            return redirect('/aircraft_manager')->with('error', 'There was an error when creating the aircraft!');
+            return redirect()->route('aircraft_manager.index')->with('error', 'There was an error creating the aircraft!');
         }
     }
 
@@ -77,15 +78,39 @@ class AircraftController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $aircraft = Aircraft::findOrFail($id);
+
+        $makes = AircraftMakes::all();
+
+        $models = AircraftModels::all();
+
+        return view('aircraft_manager.edit', compact(
+            'aircraft',
+            'makes',
+            'models'
+        ));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateAircraftRequest $request, string $id)
     {
-        //
+        $validated = $request->validated();
+
+        $aircraft = Aircraft::findOrFail($id);
+
+        try {
+            $aircraft->update([
+                'make_id' => $validated['make'],
+                'model_id' => $validated['model'],
+                'identifier' => $validated['identifier'],
+            ]);
+
+            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft edited successfully!');
+        } catch (\Exception $e) {
+            return redirect()->route('aircraft_manager.index')->with('error', 'There was a problem editing the aircraft!');
+        }
     }
 
     /**
