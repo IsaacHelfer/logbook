@@ -7,9 +7,14 @@
         <div class="col-md-12 mb-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Aircraft</h5>
+                    <h5 class="card-title">
+                        Aircraft
+                        <x-action route="aircraft_manager.create">
+                            <i class="fa-solid fa-square-plus fa-xs"></i>
+                        </x-action>
+                    </h5>
 
-                    <div class="table-responsive">
+                    <div class="table-responsive mb-3">
                         <table class="table table-hover table-striped mt-3">
                             <thead>
                                 <tr>
@@ -56,7 +61,12 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Makes</h5>
+                    <h5 class="card-title">
+                        Makes
+                        <x-action>
+                            <i class="fa-solid fa-square-plus fa-xs"></i>
+                        </x-action>
+                    </h5>
 
                     <div class="table-responsive">
                         <table class="table table-hover table-striped mt-3">
@@ -105,7 +115,12 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Models</h5>
+                    <h5 class="card-title">
+                        Models
+                        <x-action>
+                            <i class="fa-solid fa-square-plus fa-xs"></i>
+                        </x-action>
+                    </h5>
 
                     <div class="table-responsive">
                         <table class="table table-hover table-striped mt-3">

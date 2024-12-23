@@ -19,5 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'index');
 
 Route::resource('entries', EntriesController::class);
-Route::resource('aircraft', AircraftController::class);
+Route::resource('aircraft_manager', AircraftController::class);
 Route::resource('flight_categories', FlightCategoriesController::class);
