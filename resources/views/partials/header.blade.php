@@ -20,7 +20,7 @@
                             <span><i class="fa-solid fa-gear fa-lg"></i></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Manage Aircraft</a></li>
+                            <li><a class="dropdown-item" href="{{ route('aircraft.index') }}">Manage Aircraft</a></li>
                         </ul>
                     </li>
                 </ul>
