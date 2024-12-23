@@ -15,7 +15,7 @@
         </div>
 
         <div class="card-body">
-            <form action="{{ route('aircraft_manager.store') }}" method="POST">
+            <form action="{{ route('aircraft_manager.aircraft.store') }}" method="POST">
                 @csrf
 
                 <div class="row">
