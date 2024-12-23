@@ -29,17 +29,12 @@
                                             <td>
                                                 <div class="d-flex justify-content-end gap-2">
                                                     <div>
-                                                        <x:action route="" parameters="{{ $ac->getKey() }}">
-                                                            <i class="fa-solid fa-eye"></i>
-                                                        </x:action>
-                                                    </div>
-                                                    <div>
                                                         <x:action route="aircraft_manager.edit" parameters="{{ $ac->getKey() }}">
                                                             <i class="fa-solid fa-pen-to-square"></i>
                                                         </x:action>
                                                     </div>
                                                     <div>
-                                                        <form action="" method="POST" id="form-delete-entries">
+                                                        <form action="{{ route('aircraft_manager.destroy', $ac->getKey()) }}" method="POST" id="form-delete-entries">
                                                             @csrf
                                                             @method('DELETE')
                                                             <x:action class="data-delete">
@@ -82,11 +77,6 @@
                                         <td class="text-truncate">{{$make->make}}</td>
                                         <td>
                                             <div class="d-flex justify-content-end gap-2">
-                                                <div>
-                                                    <x:action route="" parameters="">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                    </x:action>
-                                                </div>
                                                 <div>
                                                     <x:action route="" parameters="">
                                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -138,11 +128,6 @@
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
                                                     <x:action route="" parameters="">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                    </x:action>
-                                                </div>
-                                                <div>
-                                                    <x:action route="" parameters="">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </x:action>
                                                 </div>
@@ -167,4 +152,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $('.data-delete').on('click', function(e) {
+            e.preventDefault();
+            $('#form-delete-entries').submit();
+        })
+    </script>
 @endsection

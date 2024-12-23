@@ -118,6 +118,14 @@ class AircraftController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $aircraft = Aircraft::findOrFail($id);
+
+            $aircraft->delete();
+
+            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft deleted successfully!');
+        } catch (\Exception $e) {
+            return redirect()->route('aircraft_manager.index')->with('error', 'There was an error deleting the aircraft!');
+        }
     }
 }
