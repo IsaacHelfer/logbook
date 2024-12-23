@@ -35,13 +35,7 @@
                                                         </x:action>
                                                     </div>
                                                     <div>
-                                                        <form action="{{ route('aircraft_manager.aircraft.destroy', $ac->getKey()) }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <x:action class="trash">
-                                                                <i class="fa-solid fa-trash"></i>
-                                                            </x:action>
-                                                        </form>
+                                                        <x:action action="{{ route('aircraft_manager.aircraft.destroy', $ac->getKey()) }}" delete />
                                                     </div>
                                                 </div>
                                             </td>
@@ -85,13 +79,7 @@
                                                     </x:action>
                                                 </div>
                                                 <div>
-                                                    <form action="" method="POST" id="form-delete-entries">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <x:action class="data-delete">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </x:action>
-                                                    </form>
+{{--                                                    <x:action action="{{ route('aircraft_manager.makes.destroy', $make->getKey()) }}" delete />--}}
                                                 </div>
                                             </div>
                                         </td>
@@ -135,13 +123,7 @@
                                                     </x:action>
                                                 </div>
                                                 <div>
-                                                    <form action="" method="POST" id="form-delete-entries">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <x:action class="data-delete">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </x:action>
-                                                    </form>
+{{--                                                    <x:action action="{{ route('aircraft_manager.models.destroy', $model->getKey()) }}" delete />--}}
                                                 </div>
                                             </div>
                                         </td>
@@ -155,11 +137,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $('.trash').on('click', function(e) {
-            e.preventDefault();
-            $(this).closest('form').submit();
-        })
-    </script>
 @endsection
