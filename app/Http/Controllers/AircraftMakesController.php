@@ -83,14 +83,14 @@ class AircraftMakesController extends Controller
      */
     public function destroy(string $id)
     {
-//        try {
-//            $aircraft = Aircraft::findOrFail($id);
-//
-//            $aircraft->delete();
-//
-//            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft deleted successfully!');
-//        } catch (\Exception $e) {
-//            return redirect()->route('aircraft_manager.index')->with('error', 'There was an error deleting the aircraft!');
-//        }
+        try {
+            $make = AircraftMakes::findOrFail($id);
+
+            $make->delete();
+
+            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft make deleted successfully!');
+        } catch (\Exception $e) {
+            return redirect()->route('aircraft_manager.index')->with('error', 'There was an error deleting the aircraft make!');
+        }
     }
 }

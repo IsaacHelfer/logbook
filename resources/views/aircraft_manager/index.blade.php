@@ -79,7 +79,7 @@
                                                     </x:action>
                                                 </div>
                                                 <div>
-{{--                                                    <x:action action="{{ route('aircraft_manager.makes.destroy', $make->getKey()) }}" delete />--}}
+                                                    <x:action action="{{ route('aircraft_manager.makes.destroy', $make->getKey()) }}" delete />
                                                 </div>
                                             </div>
                                         </td>
