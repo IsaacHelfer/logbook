@@ -19,7 +19,7 @@ class EntriesController extends Controller
      */
     public function index()
     {
-        $entries = Entries::all();
+        $entries = Entries::orderBy('date', 'ASC')->get();
 
         return view('entries.index', compact(
             'entries'
