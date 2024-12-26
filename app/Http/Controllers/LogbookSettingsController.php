@@ -7,7 +7,7 @@ use App\Models\FlightCategories;
 use App\Models\FlightTypes;
 use Illuminate\Http\Request;
 
-class FlightCategoriesController extends Controller
+class LogbookSettingsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class FlightCategoriesController extends Controller
 
         $types = FlightTypes::all();
 
-        return view('flight_categories.index', compact(
+        return view('logbook_settings.index', compact(
             'categories',
             'types'
         ));

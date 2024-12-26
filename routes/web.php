@@ -4,7 +4,7 @@ use App\Http\Controllers\AircraftController;
 use App\Http\Controllers\AircraftMakesController;
 use App\Http\Controllers\AircraftModelsController;
 use App\Http\Controllers\EntriesController;
-use App\Http\Controllers\FlightCategoriesController;
+use App\Http\Controllers\LogbookSettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +30,4 @@ Route::prefix('aircraft_manager')->name('aircraft_manager.')->group(function () 
     Route::resource('/models', AircraftModelsController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
 });
 
-Route::resource('flight_categories', FlightCategoriesController::class);
+Route::resource('logbook_settings', LogbookSettingsController::class);

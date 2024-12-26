@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Flight Categories Manager</h1>
+    <h1>Logbook Settings</h1>
 @endsection
