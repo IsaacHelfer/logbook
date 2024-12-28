@@ -19,7 +19,7 @@ class LogbookController extends Controller
      */
     public function index()
     {
-        $entries = Entries::all();
+        $entries = Entries::orderBy('date', 'ASC')->get();
 
         return view('logbook.index', compact(
             'entries'
