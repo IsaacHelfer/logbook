@@ -8,14 +8,14 @@
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('aircraft_manager.index') }}">Aircraft Manager</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('logbook.settings.index') }}">Aircraft Manager</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Edit Aircraft Make</li>
                 </ol>
             </nav>
         </div>
 
         <div class="card-body">
-            <form action="{{ route('aircraft_manager.makes.update', $make->getKey()) }}" method="POST">
+            <form action="{{ route('logbook.settings.makes.update', $make->getKey()) }}" method="POST">
                 @csrf
 
                 @method('PUT')
@@ -24,7 +24,7 @@
                     <x:input type="text" id="make" class="col-md-12 mb-3" value="{{ $make->make }}" required />
 
                     <div class="col-md-6 offset-md-6 text-end mt-3">
-                        <a href="{{ route('aircraft_manager.index') }}" class="btn btn-outline-secondary btn-md">Back</a>
+                        <a href="{{ route('logbook.settings.index') }}" class="btn btn-outline-secondary btn-md">Back</a>
                         <input type="submit" value="Save" class="btn btn-success ms-2 btn-md" />
                     </div>
                 </div>

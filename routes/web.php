@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\AircraftController;
-use App\Http\Controllers\AircraftMakesController;
-use App\Http\Controllers\AircraftModelsController;
 use App\Http\Controllers\LogbookController;
-use App\Http\Controllers\FlightCategoriesController;
+use App\Http\Controllers\LogbookSettings\AircraftController;
+use App\Http\Controllers\LogbookSettings\AircraftMakesController;
+use App\Http\Controllers\LogbookSettings\AircraftModelsController;
+use App\Http\Controllers\LogbookSettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,14 +20,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index');
 
-Route::resource('/logbook', LogbookController::class);
-
-Route::resource('/aircraft_manager', AircraftController::class)->only(['index']);
-
-Route::prefix('aircraft_manager')->name('aircraft_manager.')->group(function () {
+Route::prefix('/logbook/settings')->name('logbook.settings.')->group(function () {
+    Route::get('/', [LogbookSettingsController::class, 'index'])->name('index');
     Route::resource('/aircraft', AircraftController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
     Route::resource('/makes', AircraftMakesController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
     Route::resource('/models', AircraftModelsController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
 });
 
-Route::resource('flight_categories', FlightCategoriesController::class);
+Route::resource('/logbook', LogbookController::class);

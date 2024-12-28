@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\LogbookSettings;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAircraftMakesRequest;
 use App\Http\Requests\UpdateAircraftMakesRequest;
-use App\Http\Requests\UpdateAircraftRequest;
 use App\Models\AircraftMakes;
-use Illuminate\Http\Request;
 
 class AircraftMakesController extends Controller
 {
@@ -17,7 +16,7 @@ class AircraftMakesController extends Controller
     {
         $makes = AircraftMakes::all();
 
-        return view('aircraft_manager.makes.create', compact(
+        return view('logbook.settings.makes.create', compact(
             'makes'
         ));
     }
@@ -34,9 +33,9 @@ class AircraftMakesController extends Controller
                 'make' => $validated['make'],
             ]);
 
-            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft make added successfully!');
+            return redirect()->route('logbook.settings.index')->with('success', 'Aircraft make added successfully!');
         } catch (\Exception $e) {
-            return redirect()->route('aircraft_manager.index')->with('error', 'There was an error adding the aircraft make!');
+            return redirect()->route('logbook.settings.index')->with('error', 'There was an error adding the aircraft make!');
         }
     }
 
@@ -47,7 +46,7 @@ class AircraftMakesController extends Controller
     {
         $make = AircraftMakes::findOrFail($id);
 
-        return view('aircraft_manager.makes.edit', compact(
+        return view('logbook.settings.makes.edit', compact(
             'make',
         ));
     }
@@ -66,9 +65,9 @@ class AircraftMakesController extends Controller
                 'make' => $validated['make'],
             ]);
 
-            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft make edited successfully!');
+            return redirect()->route('logbook.settings.index')->with('success', 'Aircraft make edited successfully!');
         } catch (\Exception $e) {
-            return redirect()->route('aircraft_manager.index')->with('error', 'There was a problem editing the aircraft make!');
+            return redirect()->route('logbook.settings.index')->with('error', 'There was a problem editing the aircraft make!');
         }
     }
 
@@ -82,9 +81,9 @@ class AircraftMakesController extends Controller
 
             $make->delete();
 
-            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft make deleted successfully!');
+            return redirect()->route('logbook.settings.index')->with('success', 'Aircraft make deleted successfully!');
         } catch (\Exception $e) {
-            return redirect()->route('aircraft_manager.index')->with('error', 'There was an error deleting the aircraft make!');
+            return redirect()->route('logbook.settings.index')->with('error', 'There was an error deleting the aircraft make!');
         }
     }
 }

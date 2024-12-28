@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\LogbookSettings;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAircraftModelsRequest;
 use App\Http\Requests\UpdateAircraftModelsRequest;
 use App\Models\AircraftModels;
-use Illuminate\Http\Request;
 
 class AircraftModelsController extends Controller
 {
@@ -16,7 +16,7 @@ class AircraftModelsController extends Controller
     {
         $models = AircraftModels::all();
 
-        return view('aircraft_manager.models.create', compact(
+        return view('logbook.settings.models.create', compact(
             'models'
         ));
     }
@@ -33,9 +33,9 @@ class AircraftModelsController extends Controller
                 'model' => $validated['model'],
             ]);
 
-            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft model added successfully!');
+            return redirect()->route('logbook.settings.index')->with('success', 'Aircraft model added successfully!');
         } catch (\Exception $e) {
-            return redirect()->route('aircraft_manager.index')->with('error', 'There was an error adding the aircraft model!');
+            return redirect()->route('logbook.settings.index')->with('error', 'There was an error adding the aircraft model!');
         }
     }
 
@@ -46,7 +46,7 @@ class AircraftModelsController extends Controller
     {
         $model = AircraftModels::findOrFail($id);
 
-        return view('aircraft_manager.models.edit', compact(
+        return view('logbook.settings.models.edit', compact(
             'model',
         ));
     }
@@ -65,9 +65,9 @@ class AircraftModelsController extends Controller
                 'model' => $validated['model'],
             ]);
 
-            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft model edited successfully!');
+            return redirect()->route('logbook.settings.index')->with('success', 'Aircraft model edited successfully!');
         } catch (\Exception $e) {
-            return redirect()->route('aircraft_manager.index')->with('error', 'There was a problem editing the aircraft model!');
+            return redirect()->route('logbook.settings.index')->with('error', 'There was a problem editing the aircraft model!');
         }
     }
 
@@ -81,9 +81,9 @@ class AircraftModelsController extends Controller
 
             $model->delete();
 
-            return redirect()->route('aircraft_manager.index')->with('success', 'Aircraft model deleted successfully!');
+            return redirect()->route('logbook.settings.index')->with('success', 'Aircraft model deleted successfully!');
         } catch (\Exception $e) {
-            return redirect()->route('aircraft_manager.index')->with('error', 'There was an error deleting the aircraft model!');
+            return redirect()->route('logbook.settings.index')->with('error', 'There was an error deleting the aircraft model!');
         }
     }
 }

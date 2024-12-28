@@ -20,8 +20,8 @@
                             <span><i class="fa-solid fa-gear fa-lg"></i></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('aircraft_manager.index') }}">Manage Aircraft</a></li>
-                            <li><a class="dropdown-item" href="{{ route('flight_categories.index') }}">Manage Flight Categories</a></li>
+                            <li><a class="dropdown-item" href="{{ route('logbook.settings.index') }}">Logbook Settings</a></li>
+                            <hr>
                         </ul>
                     </li>
                 </ul>

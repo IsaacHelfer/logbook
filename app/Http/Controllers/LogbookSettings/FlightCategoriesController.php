@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\LogbookSettings;
 
-use App\Models\Aircraft;
+use App\Http\Controllers\Controller;
 use App\Models\FlightCategories;
 use App\Models\FlightTypes;
 use Illuminate\Http\Request;
