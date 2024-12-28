@@ -62,17 +62,17 @@
                         <td>
                             <div class="d-flex justify-content-between gap-2">
                                 <div>
-                                    <x:action route="logbook.show" parameters="{{ $entry->getKey() }}">
+                                    <x:action route="logbook.show" parameters="{{ $entry->getKey() }}" tooltip="Show">
                                         <i class="fa-solid fa-eye"></i>
                                     </x:action>
                                 </div>
                                 <div>
-                                    <x:action route="logbook.edit" parameters="{{ $entry->getKey() }}">
+                                    <x:action route="logbook.edit" parameters="{{ $entry->getKey() }}" tooltip="Edit">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </x:action>
                                 </div>
                                 <div>
-                                    <x:action action="{{ route('logbook.destroy', $entry->getKey()) }}" delete />
+                                    <x:action action="{{ route('logbook.destroy', $entry->getKey()) }}" delete tooltip="Delete" />
                                 </div>
                             </div>
                         </td>

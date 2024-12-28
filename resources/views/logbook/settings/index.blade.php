@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         Aircraft
-                        <x-action route="logbook.settings.aircraft.create">
+                        <x-action route="logbook.settings.aircraft.create" tooltip="Create">
                             <i class="fa-solid fa-square-plus fa-xs"></i>
                         </x-action>
                     </h5>
@@ -30,12 +30,12 @@
                                         <td>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
-                                                    <x:action route="logbook.settings.aircraft.edit" parameters="{{ $ac->getKey() }}">
+                                                    <x:action route="logbook.settings.aircraft.edit" parameters="{{ $ac->getKey() }}" tooltip="Edit">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </x:action>
                                                 </div>
                                                 <div>
-                                                    <x:action action="{{ route('logbook.settings.aircraft.destroy', $ac->getKey()) }}" delete />
+                                                    <x:action action="{{ route('logbook.settings.aircraft.destroy', $ac->getKey()) }}" delete tooltip="Delete" />
                                                 </div>
                                             </div>
                                         </td>
@@ -54,7 +54,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         Makes
-                        <x-action route="logbook.settings.makes.create">
+                        <x-action route="logbook.settings.makes.create" tooltip="Create">
                             <i class="fa-solid fa-square-plus fa-xs"></i>
                         </x-action>
                     </h5>
@@ -74,12 +74,12 @@
                                         <td>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
-                                                    <x:action route="logbook.settings.makes.edit" parameters="{{ $make->getKey() }}">
+                                                    <x:action route="logbook.settings.makes.edit" parameters="{{ $make->getKey() }}" tooltip="Edit">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </x:action>
                                                 </div>
                                                 <div>
-                                                    <x:action action="{{ route('logbook.settings.makes.destroy', $make->getKey()) }}" delete />
+                                                    <x:action action="{{ route('logbook.settings.makes.destroy', $make->getKey()) }}" delete tooltip="Delete" />
                                                 </div>
                                             </div>
                                         </td>
@@ -98,7 +98,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         Models
-                        <x-action route="logbook.settings.models.create">
+                        <x-action route="logbook.settings.models.create" tooltip="Create">
                             <i class="fa-solid fa-square-plus fa-xs"></i>
                         </x-action>
                     </h5>
@@ -118,12 +118,12 @@
                                         <td>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
-                                                    <x:action route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}">
+                                                    <x:action route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}" tooltip="Edit">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </x:action>
                                                 </div>
                                                 <div>
-                                                    <x:action action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete />
+                                                    <x:action action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete tooltip="Delete" />
                                                 </div>
                                             </div>
                                         </td>
@@ -142,7 +142,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         Categories
-                        <x-action route="logbook.settings.models.create">
+                        <x-action route="logbook.settings.models.create" tooltip="Create">
                             <i class="fa-solid fa-square-plus fa-xs"></i>
                         </x-action>
                     </h5>
@@ -186,7 +186,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         Types
-                        <x-action route="logbook.settings.models.create">
+                        <x-action route="logbook.settings.models.create" tooltip="Create">
                             <i class="fa-solid fa-square-plus fa-xs"></i>
                         </x-action>
                     </h5>
