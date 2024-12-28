@@ -4,7 +4,8 @@ use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\LogbookSettings\AircraftController;
 use App\Http\Controllers\LogbookSettings\AircraftMakesController;
 use App\Http\Controllers\LogbookSettings\AircraftModelsController;
-use App\Http\Controllers\LogbookSettingsController;
+use App\Http\Controllers\LogbookSettings\FlightCategoriesController;
+use App\Http\Controllers\LogbookSettings\LogbookSettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +23,12 @@ Route::view('/', 'index');
 
 Route::prefix('/logbook/settings')->name('logbook.settings.')->group(function () {
     Route::get('/', [LogbookSettingsController::class, 'index'])->name('index');
+
     Route::resource('/aircraft', AircraftController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
     Route::resource('/makes', AircraftMakesController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
     Route::resource('/models', AircraftModelsController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
+
+    Route::resource('/categories', FlightCategoriesController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
 });
 
 Route::resource('/logbook', LogbookController::class);

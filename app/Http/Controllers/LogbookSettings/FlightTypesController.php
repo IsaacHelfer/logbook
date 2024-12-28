@@ -7,7 +7,7 @@ use App\Models\FlightCategories;
 use App\Models\FlightTypes;
 use Illuminate\Http\Request;
 
-class FlightCategoriesController extends Controller
+class FlightTypesController extends Controller
 {
     /**
      * Show the form for creating a new resource.
