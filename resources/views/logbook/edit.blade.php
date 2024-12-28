@@ -8,14 +8,14 @@
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('entries.index') }}">Logbook</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('logbook.index') }}">Logbook</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Edit Entry</li>
                 </ol>
             </nav>
         </div>
 
         <div class="card-body">
-            <form action="{{ route('entries.update', $entry->getKey()) }}" method="POST">
+            <form action="{{ route('logbook.update', $entry->getKey()) }}" method="POST">
                 @csrf
 
                 @method('PUT')
@@ -175,7 +175,7 @@
                     </x:input>
 
                     <div class="col-md-6 offset-md-6 text-end mt-3">
-                        <a href="{{ route('entries.index') }}" class="btn btn-outline-secondary btn-md">Back</a>
+                        <a href="{{ route('logbook.index') }}" class="btn btn-outline-secondary btn-md">Back</a>
                         <input type="submit" value="Save" class="btn btn-success ms-2 btn-md" />
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 use App\Http\Controllers\AircraftController;
 use App\Http\Controllers\AircraftMakesController;
 use App\Http\Controllers\AircraftModelsController;
-use App\Http\Controllers\EntriesController;
+use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\FlightCategoriesController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index');
 
-Route::resource('/entries', EntriesController::class);
+Route::resource('/logbook', LogbookController::class);
 
 Route::resource('/aircraft_manager', AircraftController::class)->only(['index']);
 

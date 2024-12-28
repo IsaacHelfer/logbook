@@ -10,7 +10,7 @@
                     <a class="nav-link @if(request()->is('/')){{ 'active' }}@endif" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @if(request()->is('entries')){{ 'active' }}@endif" href="/entries">Logbook</a>
+                    <a class="nav-link @if(request()->is('entries')){{ 'active' }}@endif" href="/logbook">Logbook</a>
                 </li>
             </ul>
             <div class="d-flex">

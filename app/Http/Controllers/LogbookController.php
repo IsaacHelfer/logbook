@@ -12,7 +12,7 @@ use Dotenv\Parser\Entry;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class EntriesController extends Controller
+class LogbookController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +21,7 @@ class EntriesController extends Controller
     {
         $entries = Entries::all();
 
-        return view('entries.index', compact(
+        return view('logbook.index', compact(
             'entries'
         ));
     }
@@ -37,7 +37,7 @@ class EntriesController extends Controller
 
         $types = FlightTypes::all();
 
-        return view('entries.create', compact(
+        return view('logbook.create', compact(
             'aircraft',
             'categories',
             'types'
@@ -72,9 +72,9 @@ class EntriesController extends Controller
                 'remarks' => $validated['remarks'] ?? '',
             ]);
 
-            return redirect()->route('entries.index')->with('success', 'Entry added successfully!');
+            return redirect()->route('logbook.index')->with('success', 'Entry added successfully!');
         } catch (\Exception $e) {
-            return redirect()->route('entries.index')->with('error', 'There was an error creating the entry!');
+            return redirect()->route('logbook.index')->with('error', 'There was an error creating the entry!');
         }
     }
 
@@ -99,7 +99,7 @@ class EntriesController extends Controller
 
         $types = FlightTypes::all();
 
-        return view('entries.edit', compact(
+        return view('logbook.edit', compact(
             'entry',
             'aircraft',
             'categories',
@@ -136,9 +136,9 @@ class EntriesController extends Controller
                 'remarks' => $validated['remarks'] ?? '',
             ]);
 
-            return redirect()->route('entries.index')->with('success', 'Entry edited successfully!');
+            return redirect()->route('logbook.index')->with('success', 'Entry edited successfully!');
         } catch (\Exception $e) {
-            return redirect()->route('entries.index')->with('error', 'There was a problem editing the entry!');
+            return redirect()->route('logbook.index')->with('error', 'There was a problem editing the entry!');
         }
     }
 
@@ -152,9 +152,9 @@ class EntriesController extends Controller
 
             $entry->delete();
 
-            return redirect()->route('entries.index')->with('success', 'Entry deleted successfully!');
+            return redirect()->route('logbook.index')->with('success', 'Entry deleted successfully!');
         } catch (\Exception $e) {
-            return redirect()->route('entries.index')->with('error', 'There was an error deleting the entry!');
+            return redirect()->route('logbook.index')->with('error', 'There was an error deleting the entry!');
         }
     }
 }

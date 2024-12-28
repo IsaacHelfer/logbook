@@ -9,7 +9,7 @@
                 <h1>{{ $title }}</h1>
             </div>
             <div class="col-auto text-end">
-                <a href="{{ route('entries.create') }}" class="btn btn-primary">
+                <a href="{{ route('logbook.create') }}" class="btn btn-primary">
                     <span>Create Entry</span>
                 </a>
             </div>
@@ -62,17 +62,17 @@
                         <td>
                             <div class="d-flex justify-content-between gap-2">
                                 <div>
-                                    <x:action route="entries.show" parameters="{{ $entry->getKey() }}">
+                                    <x:action route="logbook.show" parameters="{{ $entry->getKey() }}">
                                         <i class="fa-solid fa-eye"></i>
                                     </x:action>
                                 </div>
                                 <div>
-                                    <x:action route="entries.edit" parameters="{{ $entry->getKey() }}">
+                                    <x:action route="logbook.edit" parameters="{{ $entry->getKey() }}">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </x:action>
                                 </div>
                                 <div>
-                                    <x:action action="{{ route('entries.destroy', $entry->getKey()) }}" delete />
+                                    <x:action action="{{ route('logbook.destroy', $entry->getKey()) }}" delete />
                                 </div>
                             </div>
                         </td>
