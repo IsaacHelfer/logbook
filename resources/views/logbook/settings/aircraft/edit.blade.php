@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card p-4">
-        <div class="card-header">
+    <x:card>
+        <x:card-header>
             <div class="col">
                 <h1>Edit Aircraft</h1>
             </div>
@@ -12,9 +12,9 @@
                     <li class="breadcrumb-item active" aria-current="page">Edit Aircraft</li>
                 </ol>
             </nav>
-        </div>
+        </x:card-header>
 
-        <div class="card-body">
+        <x:card-body>
             <form action="{{ route('logbook.settings.aircraft.update', $aircraft->getKey()) }}" method="POST">
                 @csrf
 
@@ -45,8 +45,8 @@
                     </div>
                 </div>
             </form>
-        </div>
-    </div>
+        </x:card-body>
+    </x:card>
 
     <script type="module">
         $('.number-input').on('change', function() {
