@@ -13,7 +13,7 @@
         </a>
     </form>
 @else
-    <a {{ $attributes->merge(['class' => 'link-secondary']) }}
+    <a {{ $attributes->merge(['class' => 'link-primary']) }}
        href="{{ !empty($route) ? route($route, $parameters ?? '') : '#' }}"
        @if(!empty($tooltip))
            data-bs-toggle="tooltip"

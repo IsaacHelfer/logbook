@@ -30,7 +30,7 @@
                                         <td>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
-                                                    <x:action route="logbook.settings.aircraft.edit" parameters="{{ $ac->getKey() }}" tooltip="Edit">
+                                                    <x:action class="link-secondary" route="logbook.settings.aircraft.edit" parameters="{{ $ac->getKey() }}" tooltip="Edit">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </x:action>
                                                 </div>
@@ -74,7 +74,7 @@
                                         <td>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
-                                                    <x:action route="logbook.settings.makes.edit" parameters="{{ $make->getKey() }}" tooltip="Edit">
+                                                    <x:action class="link-secondary" route="logbook.settings.makes.edit" parameters="{{ $make->getKey() }}" tooltip="Edit">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </x:action>
                                                 </div>
@@ -118,7 +118,7 @@
                                         <td>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
-                                                    <x:action route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}" tooltip="Edit">
+                                                    <x:action class="link-secondary" route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}" tooltip="Edit">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </x:action>
                                                 </div>
@@ -162,7 +162,7 @@
 {{--                                        <td>--}}
 {{--                                            <div class="d-flex justify-content-end gap-2">--}}
 {{--                                                <div>--}}
-{{--                                                    <x:action route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}">--}}
+{{--                                                    <x:action class="link-secondary" route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}">--}}
 {{--                                                        <i class="fa-solid fa-pen-to-square"></i>--}}
 {{--                                                    </x:action>--}}
 {{--                                                </div>--}}
@@ -206,7 +206,7 @@
 {{--                                        <td>--}}
 {{--                                            <div class="d-flex justify-content-end gap-2">--}}
 {{--                                                <div>--}}
-{{--                                                    <x:action route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}">--}}
+{{--                                                    <x:action class="link-secondary" route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}">--}}
 {{--                                                        <i class="fa-solid fa-pen-to-square"></i>--}}
 {{--                                                    </x:action>--}}
 {{--                                                </div>--}}
