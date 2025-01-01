@@ -83,7 +83,11 @@ class LogbookController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $entry = Entries::findOrFail($id);
+
+        return view('logbook.show', compact(
+            'entry'
+        ));
     }
 
     /**

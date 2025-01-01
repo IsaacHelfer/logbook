@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@props(['title'=>'Logbook Entries'])
-
 @section('content')
-    <p>test</p>
+    <p>TODO</p>
 @endsection

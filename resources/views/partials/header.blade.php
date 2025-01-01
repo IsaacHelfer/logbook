@@ -21,7 +21,6 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('logbook.settings.index') }}">Logbook Settings</a></li>
-                            <hr>
                         </ul>
                     </li>
                 </ul>
