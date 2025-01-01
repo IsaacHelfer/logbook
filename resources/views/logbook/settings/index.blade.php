@@ -6,8 +6,8 @@
     <div class="row mt-3">
         <!-- aircraft -->
         <div class="col-md-12 mb-3">
-            <div class="card">
-                <div class="card-body">
+            <x:card>
+                <x:card-body>
                     <h5 class="card-title">
                         Aircraft
                         <x-action route="logbook.settings.aircraft.create" tooltip="Create">
@@ -45,13 +45,13 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
+                </x:card-body>
+            </x:card>
         </div>
         <!-- makes -->
         <div class="col-md-6 mb-3">
-            <div class="card">
-                <div class="card-body">
+            <x:card>
+                <x:card-body>
                     <h5 class="card-title">
                         Makes
                         <x-action route="logbook.settings.makes.create" tooltip="Create">
@@ -89,13 +89,13 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
+                </x:card-body>
+            </x:card>
         </div>
         <!-- models -->
         <div class="col-md-6 mb-3">
-            <div class="card">
-                <div class="card-body">
+            <x:card>
+                <x:card-body>
                     <h5 class="card-title">
                         Models
                         <x-action route="logbook.settings.models.create" tooltip="Create">
@@ -133,13 +133,13 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
+                </x:card-body>
+            </x:card>
         </div>
         <!-- Category -->
         <div class="col-md-6 mb-3">
-            <div class="card">
-                <div class="card-body">
+            <x:card>
+                <x:card-body>
                     <h5 class="card-title">
                         Categories
                         <x-action route="logbook.settings.models.create" tooltip="Create">
@@ -155,35 +155,35 @@
                             </tr>
                             </thead>
                             <tbody>
-{{--                            @if(!empty($models))--}}
-{{--                                @foreach($models as $model)--}}
-{{--                                    <tr>--}}
-{{--                                        <td class="text-truncate">{{$model->model}}</td>--}}
-{{--                                        <td>--}}
-{{--                                            <div class="d-flex justify-content-end gap-2">--}}
-{{--                                                <div>--}}
-{{--                                                    <x:action class="link-secondary" route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}">--}}
-{{--                                                        <i class="fa-solid fa-pen-to-square"></i>--}}
-{{--                                                    </x:action>--}}
-{{--                                                </div>--}}
-{{--                                                <div>--}}
-{{--                                                    <x:action class="link-secondary" action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete />--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                @endforeach--}}
-{{--                            @endif--}}
+                            {{--                            @if(!empty($models))--}}
+                            {{--                                @foreach($models as $model)--}}
+                            {{--                                    <tr>--}}
+                            {{--                                        <td class="text-truncate">{{$model->model}}</td>--}}
+                            {{--                                        <td>--}}
+                            {{--                                            <div class="d-flex justify-content-end gap-2">--}}
+                            {{--                                                <div>--}}
+                            {{--                                                    <x:action class="link-secondary" route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}">--}}
+                            {{--                                                        <i class="fa-solid fa-pen-to-square"></i>--}}
+                            {{--                                                    </x:action>--}}
+                            {{--                                                </div>--}}
+                            {{--                                                <div>--}}
+                            {{--                                                    <x:action class="link-secondary" action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete />--}}
+                            {{--                                                </div>--}}
+                            {{--                                            </div>--}}
+                            {{--                                        </td>--}}
+                            {{--                                    </tr>--}}
+                            {{--                                @endforeach--}}
+                            {{--                            @endif--}}
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
+                </x:card-body>
+            </x:card>
         </div>
         <!-- Type -->
         <div class="col-md-6 mb-3">
-            <div class="card">
-                <div class="card-body">
+            <x:card>
+                <x:card-body>
                     <h5 class="card-title">
                         Types
                         <x-action route="logbook.settings.models.create" tooltip="Create">
@@ -199,30 +199,30 @@
                             </tr>
                             </thead>
                             <tbody>
-{{--                            @if(!empty($models))--}}
-{{--                                @foreach($models as $model)--}}
-{{--                                    <tr>--}}
-{{--                                        <td class="text-truncate">{{$model->model}}</td>--}}
-{{--                                        <td>--}}
-{{--                                            <div class="d-flex justify-content-end gap-2">--}}
-{{--                                                <div>--}}
-{{--                                                    <x:action class="link-secondary" route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}">--}}
-{{--                                                        <i class="fa-solid fa-pen-to-square"></i>--}}
-{{--                                                    </x:action>--}}
-{{--                                                </div>--}}
-{{--                                                <div>--}}
-{{--                                                    <x:action class="link-secondary" action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete />--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                @endforeach--}}
-{{--                            @endif--}}
+                            {{--                            @if(!empty($models))--}}
+                            {{--                                @foreach($models as $model)--}}
+                            {{--                                    <tr>--}}
+                            {{--                                        <td class="text-truncate">{{$model->model}}</td>--}}
+                            {{--                                        <td>--}}
+                            {{--                                            <div class="d-flex justify-content-end gap-2">--}}
+                            {{--                                                <div>--}}
+                            {{--                                                    <x:action class="link-secondary" route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}">--}}
+                            {{--                                                        <i class="fa-solid fa-pen-to-square"></i>--}}
+                            {{--                                                    </x:action>--}}
+                            {{--                                                </div>--}}
+                            {{--                                                <div>--}}
+                            {{--                                                    <x:action class="link-secondary" action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete />--}}
+                            {{--                                                </div>--}}
+                            {{--                                            </div>--}}
+                            {{--                                        </td>--}}
+                            {{--                                    </tr>--}}
+                            {{--                                @endforeach--}}
+                            {{--                            @endif--}}
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
+                </x:card-body>
+            </x:card>
         </div>
     </div>
 @endsection
