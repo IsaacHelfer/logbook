@@ -16,10 +16,9 @@
         </div>
     </div>
 
-    <div class="table-responsive">
-        <table class="table table-hover table-striped mt-3">
-            <thead>
-            <tr>
+    <x:table class="mt-3">
+        <x:table-head>
+            <x:table-record>
                 <th scope="col">Date</th>
                 <th scope="col">Aircraft</th>
                 <th scope="col">Category</th>
@@ -37,29 +36,29 @@
                 <th scope="col">Total Duration</th>
                 <th scope="col">Remarks</th>
                 <th scope="col">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
+            </x:table-record>
+        </x:table-head>
+        <x:table-body>
             @if(!empty($entries))
                 @foreach($entries as $entry)
-                    <tr>
-                        <td class="text-truncate">{{$entry->date}}</td>
-                        <td>{{$entry->aircraft->identifier ?? ''}}</td>
-                        <td>{{$entry->category->category ?? ''}}</td>
-                        <td>{{$entry->category_time ?? ''}}</td>
-                        <td>{{$entry->type->type ?? ''}}</td>
-                        <td>{{$entry->type_time ?? ''}}</td>
-                        <td>{{$entry->day_time ?? ''}}</td>
-                        <td>{{$entry->night_time ?? ''}}</td>
-                        <td>{{$entry->xc_time ?? ''}}</td>
-                        <td>{{$entry->actual_instrument ?? ''}}</td>
-                        <td>{{$entry->sim_instrument ?? ''}}</td>
-                        <td>{{$entry->num_instrument_app ?? ''}}</td>
-                        <td>{{$entry->day_landings ?? ''}}</td>
-                        <td>{{$entry->night_landings ?? ''}}</td>
-                        <td>{{$entry->total_duration ?? ''}}</td>
-                        <td class="text-truncate">{{!empty($entry->remarks) ? $entry->remarks : 'N/A'}}</td>
-                        <td>
+                    <x:table-record>
+                        <x:table-data class="text-truncate">{{$entry->date}}</x:table-data>
+                        <x:table-data>{{$entry->aircraft->identifier ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->category->category ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->category_time ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->type->type ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->type_time ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->day_time ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->night_time ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->xc_time ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->actual_instrument ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->sim_instrument ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->num_instrument_app ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->day_landings ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->night_landings ?? ''}}</x:table-data>
+                        <x:table-data>{{$entry->total_duration ?? ''}}</x:table-data>
+                        <x:table-data class="text-truncate">{{!empty($entry->remarks) ? $entry->remarks : 'N/A'}}</x:table-data>
+                        <x:table-data>
                             <div class="d-flex justify-content-between gap-2">
                                 <div>
                                     <x:action route="logbook.show" parameters="{{ $entry->getKey() }}" tooltip="Show">
@@ -75,11 +74,10 @@
                                     <x:action action="{{ route('logbook.destroy', $entry->getKey()) }}" delete tooltip="Delete" />
                                 </div>
                             </div>
-                        </td>
-                    </tr>
+                        </x:table-data>
+                    </x:table-record>
                 @endforeach
             @endif
-            </tbody>
-        </table>
-    </div>
+        </x:table-body>
+    </x:table>
 @endsection
