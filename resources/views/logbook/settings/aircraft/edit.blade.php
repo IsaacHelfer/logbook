@@ -47,12 +47,4 @@
             </form>
         </x:card-body>
     </x:card>
-
-    <script type="module">
-        $('.number-input').on('change', function() {
-            if ($(this).val() < 0) {
-                $(this).val(0);
-            }
-        });
-    </script>
 @endsection
