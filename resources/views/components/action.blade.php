@@ -2,7 +2,7 @@
     <form action="{{ $action }}" method="POST">
         @csrf
         @method('DELETE')
-        <a {{ $attributes->merge(['class' => 'link-primary trash']) }}
+        <a {{ $attributes->merge(['class' => 'link-secondary trash']) }}
             href="{{ !empty($route) ? route($route, $parameters ?? '') : '#' }}"
             @if(!empty($tooltip))
                 data-bs-toggle="tooltip"
@@ -13,7 +13,7 @@
         </a>
     </form>
 @else
-    <a {{ $attributes->merge(['class' => 'link-primary']) }}
+    <a {{ $attributes->merge(['class' => 'link-secondary']) }}
        href="{{ !empty($route) ? route($route, $parameters ?? '') : '#' }}"
        @if(!empty($tooltip))
            data-bs-toggle="tooltip"
