@@ -15,19 +15,20 @@
                         </x-action>
                     </h5>
 
-                    <div class="table-responsive mb-3">
-                        <table class="table table-hover table-striped mt-3">
-                            <thead>
-                            <tr>
+                    <x:table>
+                        <x:table-head>
+                            <x:table-record>
                                 <th scope="col">Identifier</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                            </x:table-record>
+                        </x:table-head>
+                        <x:table-body>
                             @if(!empty($aircraft))
                                 @foreach($aircraft as $ac)
-                                    <tr>
-                                        <td class="text-truncate">{{$ac->identifier}}</td>
-                                        <td>
+                                    <x:table-record>
+                                        <x:table-data class="text-truncate">
+                                            {{ $ac->identifier }}
+                                        </x:table-data>
+                                        <x:table-data>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
                                                     <x:action route="logbook.settings.aircraft.edit" parameters="{{ $ac->getKey() }}" tooltip="Edit">
@@ -38,13 +39,12 @@
                                                     <x:action action="{{ route('logbook.settings.aircraft.destroy', $ac->getKey()) }}" delete tooltip="Delete" />
                                                 </div>
                                             </div>
-                                        </td>
-                                    </tr>
+                                        </x:table-data>
+                                    </x:table-record>
                                 @endforeach
                             @endif
-                            </tbody>
-                        </table>
-                    </div>
+                        </x:table-body>
+                    </x:table>
                 </x:card-body>
             </x:card>
         </div>
@@ -59,19 +59,20 @@
                         </x-action>
                     </h5>
 
-                    <div class="table-responsive">
-                        <table class="table table-hover table-striped mt-3">
-                            <thead>
-                            <tr>
+                    <x:table>
+                        <x:table-head>
+                            <x:table-record>
                                 <th scope="col">Make</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                            </x:table-record>
+                        </x:table-head>
+                        <x:table-body>
                             @if(!empty($makes))
                                 @foreach($makes as $make)
-                                    <tr>
-                                        <td class="text-truncate">{{$make->make}}</td>
-                                        <td>
+                                    <x:table-record>
+                                        <x:table-data class="text-truncate">
+                                            {{ $make->make }}
+                                        </x:table-data>
+                                        <x:table-data>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
                                                     <x:action route="logbook.settings.makes.edit" parameters="{{ $make->getKey() }}" tooltip="Edit">
@@ -82,13 +83,12 @@
                                                     <x:action action="{{ route('logbook.settings.makes.destroy', $make->getKey()) }}" delete tooltip="Delete" />
                                                 </div>
                                             </div>
-                                        </td>
-                                    </tr>
+                                        </x:table-data>
+                                    </x:table-record>
                                 @endforeach
                             @endif
-                            </tbody>
-                        </table>
-                    </div>
+                        </x:table-body>
+                    </x:table>
                 </x:card-body>
             </x:card>
         </div>
@@ -103,19 +103,20 @@
                         </x-action>
                     </h5>
 
-                    <div class="table-responsive">
-                        <table class="table table-hover table-striped mt-3">
-                            <thead>
-                            <tr>
+                    <x:table>
+                        <x:table-head>
+                            <x:table-record>
                                 <th scope="col">Model</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                            </x:table-record>
+                        </x:table-head>
+                        <x:table-body>
                             @if(!empty($models))
                                 @foreach($models as $model)
-                                    <tr>
-                                        <td class="text-truncate">{{$model->model}}</td>
-                                        <td>
+                                    <x:table-record>
+                                        <x:table-data class="text-truncate">
+                                            {{ $model->model }}
+                                        </x:table-data>
+                                        <x:table-data>
                                             <div class="d-flex justify-content-end gap-2">
                                                 <div>
                                                     <x:action route="logbook.settings.models.edit" parameters="{{ $model->getKey() }}" tooltip="Edit">
@@ -126,13 +127,12 @@
                                                     <x:action action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete tooltip="Delete" />
                                                 </div>
                                             </div>
-                                        </td>
-                                    </tr>
+                                        </x:table-data>
+                                    </x:table-record>
                                 @endforeach
                             @endif
-                            </tbody>
-                        </table>
-                    </div>
+                        </x:table-body>
+                    </x:table>
                 </x:card-body>
             </x:card>
         </div>
