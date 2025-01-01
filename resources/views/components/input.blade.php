@@ -37,5 +37,11 @@
         $('.select').select2({
             theme: "bootstrap-5"
         });
+
+        $('.number-input').on('change', function() {
+            if ($(this).val() < 0) {
+                $(this).val(0);
+            }
+        });
     });
 </script>

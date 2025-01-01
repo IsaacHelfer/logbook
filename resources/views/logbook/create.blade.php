@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card p-4">
-        <div class="card-header">
+    <x:card.index>
+        <x:card.header>
             <div class="col">
                 <h1>Create Logbook Entry</h1>
             </div>
@@ -12,9 +12,8 @@
                     <li class="breadcrumb-item active" aria-current="page">Create Entry</li>
                 </ol>
             </nav>
-        </div>
-
-        <div class="card-body">
+        </x:card.header>
+        <x:card.body>
             <form action="{{ route('logbook.store') }}" method="POST">
                 @csrf
 
@@ -74,20 +73,9 @@
 
                     <x:input type="textarea" id="remarks" class="col-md-12 mb-3" rows="10" cols="10" />
 
-                    <div class="col-md-6 offset-md-6 text-end mt-3">
-                        <a href="{{ route('logbook.index') }}" class="btn btn-outline-secondary btn-md">Back</a>
-                        <input type="submit" value="Create" class="btn btn-success ms-2 btn-md" />
-                    </div>
+                    <x:form-submit route="logbook.index" value="Save" />
                 </div>
             </form>
-        </div>
-    </div>
-
-    <script type="module">
-        $('.number-input').on('change', function() {
-            if ($(this).val() < 0) {
-                $(this).val(0);
-            }
-        });
-    </script>
+        </x:card.body>
+    </x:card.index>
 @endsection
