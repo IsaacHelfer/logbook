@@ -39,10 +39,7 @@
                         @endif
                     </x:input>
 
-                    <div class="col-md-6 offset-md-6 text-end mt-3">
-                        <a href="{{ route('logbook.settings.index') }}" class="btn btn-outline-secondary btn-md">Back</a>
-                        <input type="submit" value="Save" class="btn btn-success ms-2 btn-md" />
-                    </div>
+                    <x:form-submit route="logbook.settings.index" value="Save" />
                 </div>
             </form>
         </x:card-body>
