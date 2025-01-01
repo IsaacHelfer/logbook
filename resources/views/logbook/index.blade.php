@@ -19,23 +19,23 @@
     <x:table class="mt-3">
         <x:table-head>
             <x:table-record>
-                <th scope="col">Date</th>
-                <th scope="col">Aircraft</th>
-                <th scope="col">Category</th>
-                <th scope="col">Time</th>
-                <th scope="col">Type</th>
-                <th scope="col">Time</th>
-                <th scope="col">Day</th>
-                <th scope="col">Night</th>
-                <th scope="col">XC</th>
-                <th scope="col">Instrument</th>
-                <th scope="col">Sim Instrument</th>
-                <th scope="col">Instrument Apps</th>
-                <th scope="col">Day Landings</th>
-                <th scope="col">Night Landings</th>
-                <th scope="col">Total Duration</th>
-                <th scope="col">Remarks</th>
-                <th scope="col">Actions</th>
+                <x:table-header>Date</x:table-header>
+                <x:table-header>Aircraft</x:table-header>
+                <x:table-header>Category</x:table-header>
+                <x:table-header>Time</x:table-header>
+                <x:table-header>Type</x:table-header>
+                <x:table-header>Time</x:table-header>
+                <x:table-header>Day</x:table-header>
+                <x:table-header>Night</x:table-header>
+                <x:table-header>XC</x:table-header>
+                <x:table-header>Instrument</x:table-header>
+                <x:table-header>Sim Instrument</x:table-header>
+                <x:table-header>Instrument Apps</x:table-header>
+                <x:table-header>Day Landings</x:table-header>
+                <x:table-header>Night Landings</x:table-header>
+                <x:table-header>Total Duration</x:table-header>
+                <x:table-header>Remarks</x:table-header>
+                <x:table-header>Actions</x:table-header>
             </x:table-record>
         </x:table-head>
         <x:table-body>

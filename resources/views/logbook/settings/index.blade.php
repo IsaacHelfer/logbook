@@ -18,7 +18,7 @@
                     <x:table>
                         <x:table-head>
                             <x:table-record>
-                                <th scope="col">Identifier</th>
+                                <x:table-header>Identifier</x:table-header>
                             </x:table-record>
                         </x:table-head>
                         <x:table-body>
@@ -62,7 +62,7 @@
                     <x:table>
                         <x:table-head>
                             <x:table-record>
-                                <th scope="col">Make</th>
+                                <x:table-header>Make</x:table-header>
                             </x:table-record>
                         </x:table-head>
                         <x:table-body>
@@ -106,7 +106,7 @@
                     <x:table>
                         <x:table-head>
                             <x:table-record>
-                                <th scope="col">Model</th>
+                                <x:table-header>Model</x:table-header>
                             </x:table-record>
                         </x:table-head>
                         <x:table-body>
