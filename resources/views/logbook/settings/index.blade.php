@@ -35,7 +35,7 @@
                                                     </x:action>
                                                 </div>
                                                 <div>
-                                                    <x:action action="{{ route('logbook.settings.aircraft.destroy', $ac->getKey()) }}" delete tooltip="Delete" />
+                                                    <x:action class="link-secondary" action="{{ route('logbook.settings.aircraft.destroy', $ac->getKey()) }}" delete tooltip="Delete" />
                                                 </div>
                                             </div>
                                         </td>
@@ -79,7 +79,7 @@
                                                     </x:action>
                                                 </div>
                                                 <div>
-                                                    <x:action action="{{ route('logbook.settings.makes.destroy', $make->getKey()) }}" delete tooltip="Delete" />
+                                                    <x:action class="link-secondary" action="{{ route('logbook.settings.makes.destroy', $make->getKey()) }}" delete tooltip="Delete" />
                                                 </div>
                                             </div>
                                         </td>
@@ -123,7 +123,7 @@
                                                     </x:action>
                                                 </div>
                                                 <div>
-                                                    <x:action action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete tooltip="Delete" />
+                                                    <x:action class="link-secondary" action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete tooltip="Delete" />
                                                 </div>
                                             </div>
                                         </td>
@@ -167,7 +167,7 @@
 {{--                                                    </x:action>--}}
 {{--                                                </div>--}}
 {{--                                                <div>--}}
-{{--                                                    <x:action action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete />--}}
+{{--                                                    <x:action class="link-secondary" action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete />--}}
 {{--                                                </div>--}}
 {{--                                            </div>--}}
 {{--                                        </td>--}}
@@ -211,7 +211,7 @@
 {{--                                                    </x:action>--}}
 {{--                                                </div>--}}
 {{--                                                <div>--}}
-{{--                                                    <x:action action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete />--}}
+{{--                                                    <x:action class="link-secondary" action="{{ route('logbook.settings.models.destroy', $model->getKey()) }}" delete />--}}
 {{--                                                </div>--}}
 {{--                                            </div>--}}
 {{--                                        </td>--}}
