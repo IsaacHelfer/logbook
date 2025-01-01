@@ -8,7 +8,7 @@
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('aircraft_manager.index') }}">Aircraft Manager</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('logbook.settings.index') }}">Aircraft Manager</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Edit Aircraft</li>
                 </ol>
             </nav>
