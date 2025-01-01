@@ -6,7 +6,7 @@
             </span>
             <span>
                 <strong>
-                    {{ date('Y') }} My Website
+                    {{ date('Y') }} Isaac Helfer
                 </strong>
             </span>
     </footer>
