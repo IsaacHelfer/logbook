@@ -15,13 +15,13 @@ class LogbookSettingsController extends Controller
     {
         $aircraft = Aircraft::with(['make', 'model'])->get();
 
-        $makes = AircraftMakes::all();
+        $makes = AircraftMakes::select(['id', 'make'])->get();
 
-        $models = AircraftModels::all();
+        $models = AircraftModels::select(['id', 'model'])->get();
 
-        $categories = FlightCategories::all();
+        $categories = FlightCategories::select(['id', 'category'])->get();
 
-        $types = FlightTypes::all();
+        $types = FlightTypes::select(['id', 'type'])->get();
 
         return view('logbook.settings.index', compact(
             'aircraft',
