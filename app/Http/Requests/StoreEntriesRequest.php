@@ -38,6 +38,7 @@ class StoreEntriesRequest extends FormRequest
             'dayLandings'       => 'nullable|numeric',
             'nightLandings'     => 'nullable|numeric',
             'remarks'           => 'nullable',
+            'tags'              => 'nullable',
         ];
     }
 }

@@ -173,6 +173,14 @@
                         {{ $entry->remarks ?? '' }}
                     </x:input>
 
+                    <x:selectize id="tags" class="col-md-12 mb-3" multiple>
+                        @if(isset($entry->tags))
+                            @foreach($entry->tags as $tag)
+                                <option value="{{ $tag->getKey() }}" selected>{{ $tag->name }}</option>
+                            @endforeach
+                        @endif
+                    </x:selectize>
+
                     <x:form-submit route="logbook.index" value="Save" />
                 </div>
             </form>
