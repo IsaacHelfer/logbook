@@ -18,6 +18,8 @@
                     <x:table.index>
                         <x:table.head>
                             <x:table.record>
+                                <x:table.header>Make</x:table.header>
+                                <x:table.header>Model</x:table.header>
                                 <x:table.header>Identifier</x:table.header>
                             </x:table.record>
                         </x:table.head>
@@ -25,6 +27,12 @@
                             @if(!empty($aircraft))
                                 @foreach($aircraft as $ac)
                                     <x:table.record>
+                                        <x:table.data class="text-truncate">
+                                            {{ $ac->make->make }}
+                                        </x:table.data>
+                                        <x:table.data class="text-truncate">
+                                            {{ $ac->model->model }}
+                                        </x:table.data>
                                         <x:table.data class="text-truncate">
                                             {{ $ac->identifier }}
                                         </x:table.data>

@@ -13,7 +13,7 @@ class LogbookSettingsController extends Controller
 {
     public function index()
     {
-        $aircraft = Aircraft::all();
+        $aircraft = Aircraft::with(['make', 'model'])->get();
 
         $makes = AircraftMakes::all();
 
