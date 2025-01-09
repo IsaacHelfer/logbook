@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\LogbookSettings;
 
 use App\Http\Controllers\Controller;
-use App\Models\FlightCategories;
+use App\Http\Requests\StoreFlightTypesRequest;
+use App\Http\Requests\UpdateFlightTypesRequest;
 use App\Models\FlightTypes;
-use Illuminate\Http\Request;
 
 class FlightTypesController extends Controller
 {
@@ -14,15 +14,29 @@ class FlightTypesController extends Controller
      */
     public function create()
     {
-        //
+        $types = FlightTypes::all();
+
+        return view('logbook.settings.types.create', compact(
+            'types'
+        ));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreFlightTypesRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        try {
+            FlightTypes::create([
+                'type' => $validated['type'],
+            ]);
+
+            return redirect()->route('logbook.settings.index')->with('success', 'Flight type added successfully!');
+        } catch (\Exception $e) {
+            return redirect()->route('logbook.settings.index')->with('error', 'There was an error adding the flight type!');
+        }
     }
 
     /**
@@ -30,15 +44,31 @@ class FlightTypesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $type = FlightTypes::findOrFail($id);
+
+        return view('logbook.settings.types.edit', compact(
+            'type',
+        ));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateFlightTypesRequest $request, string $id)
     {
-        //
+        $validated = $request->validated();
+
+        $type = FlightTypes::findOrFail($id);
+
+        try {
+            $type->update([
+                'type' => $validated['type'],
+            ]);
+
+            return redirect()->route('logbook.settings.index')->with('success', 'Flight type edited successfully!');
+        } catch (\Exception $e) {
+            return redirect()->route('logbook.settings.index')->with('error', 'There was a problem editing the flight type!');
+        }
     }
 
     /**
@@ -46,6 +76,14 @@ class FlightTypesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $type = FlightTypes::findOrFail($id);
+
+            $type->delete();
+
+            return redirect()->route('logbook.settings.index')->with('success', 'Flight type deleted successfully!');
+        } catch (\Exception $e) {
+            return redirect()->route('logbook.settings.index')->with('error', 'There was an error deleting the flight type!');
+        }
     }
 }

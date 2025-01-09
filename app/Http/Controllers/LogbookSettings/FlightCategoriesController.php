@@ -5,9 +5,7 @@ namespace App\Http\Controllers\LogbookSettings;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFlightCategoriesRequest;
 use App\Http\Requests\UpdateFlightCategoriesRequest;
-use App\Models\AircraftMakes;
 use App\Models\FlightCategories;
-use Illuminate\Http\Request;
 
 class FlightCategoriesController extends Controller
 {
