@@ -2,7 +2,7 @@
 
 @section('content')
     <x:card>
-        <x:card-header>
+        <x:card.header>
             <div class="col">
                 <h1>Edit Aircraft</h1>
             </div>
@@ -12,9 +12,9 @@
                     <li class="breadcrumb-item active" aria-current="page">Edit Aircraft</li>
                 </ol>
             </nav>
-        </x:card-header>
+        </x:card.header>
 
-        <x:card-body>
+        <x:card.body>
             <form action="{{ route('logbook.settings.aircraft.update', $aircraft->getKey()) }}" method="POST">
                 @csrf
 
@@ -42,6 +42,6 @@
                     <x:form-submit route="logbook.settings.index" value="Save" />
                 </div>
             </form>
-        </x:card-body>
+        </x:card.body>
     </x:card>
 @endsection

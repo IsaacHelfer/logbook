@@ -2,7 +2,7 @@
 
 @section('content')
     <x:card>
-        <x:card-header>
+        <x:card.header>
             <div class="col">
                 <h1>Add Aircraft Make</h1>
             </div>
@@ -12,9 +12,9 @@
                     <li class="breadcrumb-item active" aria-current="page">Add Aircraft Make</li>
                 </ol>
             </nav>
-        </x:card-header>
+        </x:card.header>
 
-        <x:card-body>
+        <x:card.body>
             <form action="{{ route('logbook.settings.makes.store') }}" method="POST">
                 @csrf
 
@@ -24,6 +24,6 @@
                     <x:form-submit route="logbook.settings.index" value="Add" />
                 </div>
             </form>
-        </x:card-body>
+        </x:card.body>
     </x:card>
 @endsection

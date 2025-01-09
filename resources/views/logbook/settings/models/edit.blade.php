@@ -2,7 +2,7 @@
 
 @section('content')
     <x:card>
-        <x:card-header>
+        <x:card.header>
             <div class="col">
                 <h1>Edit Aircraft Model</h1>
             </div>
@@ -12,9 +12,9 @@
                     <li class="breadcrumb-item active" aria-current="page">Edit Aircraft Model</li>
                 </ol>
             </nav>
-        </x:card-header>
+        </x:card.header>
 
-        <x:card-body>
+        <x:card.body>
             <form action="{{ route('logbook.settings.models.update', $model->getKey()) }}" method="POST">
                 @csrf
 
