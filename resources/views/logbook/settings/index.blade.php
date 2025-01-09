@@ -150,10 +150,41 @@
                 <x:card.body>
                     <h5 class="card-title">
                         Categories
-                        <x-action route="logbook.settings.models.create" tooltip="Create">
+                        <x-action route="logbook.settings.categories.create" tooltip="Create">
                             <i class="fa-solid fa-square-plus fa-xs"></i>
                         </x-action>
                     </h5>
+
+                    <x:table.index>
+                        <x:table.head>
+                            <x:table.record>
+                                <x:table.header>Category</x:table.header>
+                            </x:table.record>
+                        </x:table.head>
+                        <x:table.body>
+                            @if(!empty($categories))
+                                @foreach($categories as $category)
+                                    <x:table.record>
+                                        <x:table.data class="text-truncate">
+                                            {{ $category->category }}
+                                        </x:table.data>
+                                        <x:table.data>
+                                            <div class="d-flex justify-content-end gap-2">
+                                                <div>
+                                                    <x:action route="logbook.settings.categories.edit" parameters="{{ $category->getKey() }}" tooltip="Edit">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                    </x:action>
+                                                </div>
+                                                <div>
+                                                    <x:action action="{{ route('logbook.settings.categories.destroy', $category->getKey()) }}" delete tooltip="Delete" />
+                                                </div>
+                                            </div>
+                                        </x:table.data>
+                                    </x:table.record>
+                                @endforeach
+                            @endif
+                        </x:table.body>
+                    </x:table.index>
                 </x:card.body>
             </x:card.index>
         </div>
@@ -163,10 +194,41 @@
                 <x:card.body>
                     <h5 class="card-title">
                         Types
-                        <x-action route="logbook.settings.models.create" tooltip="Create">
+                        <x-action route="logbook.settings.types.create" tooltip="Create">
                             <i class="fa-solid fa-square-plus fa-xs"></i>
                         </x-action>
                     </h5>
+
+                    <x:table.index>
+                        <x:table.head>
+                            <x:table.record>
+                                <x:table.header>Type</x:table.header>
+                            </x:table.record>
+                        </x:table.head>
+                        <x:table.body>
+                            @if(!empty($types))
+                                @foreach($types as $type)
+                                    <x:table.record>
+                                        <x:table.data class="text-truncate">
+                                            {{ $type->type }}
+                                        </x:table.data>
+                                        <x:table.data>
+                                            <div class="d-flex justify-content-end gap-2">
+                                                <div>
+                                                    <x:action route="logbook.settings.types.edit" parameters="{{ $type->getKey() }}" tooltip="Edit">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                    </x:action>
+                                                </div>
+                                                <div>
+                                                    <x:action action="{{ route('logbook.settings.types.destroy', $type->getKey()) }}" delete tooltip="Delete" />
+                                                </div>
+                                            </div>
+                                        </x:table.data>
+                                    </x:table.record>
+                                @endforeach
+                            @endif
+                        </x:table.body>
+                    </x:table.index>
                 </x:card.body>
             </x:card.index>
         </div>
