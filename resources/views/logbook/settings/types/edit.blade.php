@@ -21,7 +21,7 @@
                 @method('PUT')
 
                 <div class="row">
-                    <x:input type="text" id="category" class="col-md-12 mb-3" value="{{ $type->type }}" required />
+                    <x:input type="text" id="type" class="col-md-12 mb-3" value="{{ $type->type }}" required />
 
                     <x:form-submit route="logbook.settings.index" value="Save" />
                 </div>
