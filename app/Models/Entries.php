@@ -42,4 +42,9 @@ class Entries extends Model
     {
         return $this->belongsTo(FlightTypes::class);
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tags::class, 'entry_tags', 'entry_id', 'tag_id')->withTimestamps();
+    }
 }

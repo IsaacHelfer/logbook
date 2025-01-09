@@ -73,6 +73,8 @@
 
                     <x:input type="textarea" id="remarks" class="col-md-12 mb-3" rows="10" cols="10" />
 
+                    <x:selectize id="tags" class="col-md-12 mb-3" multiple />
+
                     <x:form-submit route="logbook.index" value="Save" />
                 </div>
             </form>
