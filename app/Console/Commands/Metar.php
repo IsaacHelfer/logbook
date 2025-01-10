@@ -26,7 +26,9 @@ class Metar extends Command
      */
     public function handle()
     {
-        $response = Http::get('https://aviationweather.gov/api/data/metar?ids=' . $this->argument('icao'));
+        $response = Http::get('https://aviationweather.gov/api/data/metar', [
+            'ids' => $this->argument('icao'),
+        ]);
 
         if (!$response->successful()) {
             $this->fail('Something went wrong!');
