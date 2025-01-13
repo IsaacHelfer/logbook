@@ -7,6 +7,7 @@ use App\Http\Controllers\LogbookSettings\AircraftModelsController;
 use App\Http\Controllers\LogbookSettings\FlightCategoriesController;
 use App\Http\Controllers\LogbookSettings\FlightTypesController;
 use App\Http\Controllers\LogbookSettings\LogbookSettingsController;
+use App\Livewire\Metar;
 use Illuminate\Support\Facades\Route;
 
 /*
