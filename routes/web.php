@@ -35,4 +35,4 @@ Route::prefix('/logbook/settings')->name('logbook.settings.')->group(function ()
 
 Route::resource('/logbook', LogbookController::class);
 
-Route::view('/weather', 'weather.index');
+Route::view('/tools/metar', 'tools.metar')->name('tools.metar');

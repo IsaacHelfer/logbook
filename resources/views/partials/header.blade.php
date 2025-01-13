@@ -12,20 +12,25 @@
                 <li class="nav-item">
                     <a class="nav-link @if(request()->is('logbook')){{ 'active' }}@endif" href="/logbook">Logbook</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link @if(request()->is('weather')){{ 'active' }}@endif" href="/weather">Weather</a>
-                </li>
             </ul>
             <div class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link"><i class="fa-solid fa-moon"></i></a>
                     </li>
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTools" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <span><i class="fa-solid fa-gear fa-lg"></i></span>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownTools">
+                            <li><a class="dropdown-item" href="{{ route('tools.metar') }}">Metar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSettings" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span><i class="fa-solid fa-gear fa-lg"></i></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownSettings">
                             <li><a class="dropdown-item" href="{{ route('logbook.settings.index') }}">Logbook Settings</a></li>
                         </ul>
                     </li>
