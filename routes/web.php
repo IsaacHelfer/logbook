@@ -35,4 +35,7 @@ Route::prefix('/logbook/settings')->name('logbook.settings.')->group(function ()
 
 Route::resource('/logbook', LogbookController::class);
 
-Route::view('/tools/metar', 'tools.metar')->name('tools.metar');
+Route::prefix('/tools')->name('tools.')->group(function() {
+    Route::view('/metar', 'tools.metar')->name('metar');
+});
+
