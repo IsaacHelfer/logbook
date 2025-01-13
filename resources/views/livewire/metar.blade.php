@@ -1,5 +1,4 @@
 <div>
-
 {{--        TODO: Add errors       --}}
     <form wire:submit="getMetar">
         @csrf
@@ -24,5 +23,5 @@
         </div>
     </form>
 
-    <h1>{{ $metar }}</h1>
+    <span>{{ $metar }}</span>
 </div>

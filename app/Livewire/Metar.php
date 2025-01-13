@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Http;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
@@ -20,8 +21,12 @@ class Metar extends Component
 
     public function getMetar()
     {
-        $this->metar = Artisan::call('get:metar ' . $this->icao);
+        $response = Http::get('https://aviationweather.gov/api/data/metar', [
+            'ids' => $this->icao,
+        ]);
 
-        return $this->metar;
+        if ($response->successful()) {
+            $this->metar = $response->body();
+        }
     }
 }
