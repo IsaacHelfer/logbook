@@ -16,7 +16,7 @@
             <div class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fa-solid fa-moon"></i></a>
+                        <a class="nav-link" href="#" id="navbarModeToggle" data-mode="light"><i class="fa-solid fa-moon"></i></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTools" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,3 +39,15 @@
         </div>
     </div>
 </nav>
+
+<script>
+    $('#navbarModeToggle').on('click', function() {
+        if ($(this).data('mode') === 'light') {
+            $(this).html('<i class="fa-solid fa-sun"></i>');
+            $(this).data('mode', 'dark')
+        } else {
+            $(this).html('<i class="fa-solid fa-moon"></i>');
+            $(this).data('mode', 'light')
+        }
+    });
+</script>
