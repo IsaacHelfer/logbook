@@ -12,6 +12,14 @@
             @endif
             {{ $slot }}
         </select>
+    @elseif($type === 'file')
+        <input type="file" 
+               id="{{ $id ?? '' }}" 
+               name="{{ $id ?? '' }}" 
+               class="form-control @if(isset($inputClass)){{ $inputClass }}@endif" 
+               @if(isset($required) && $required) required @endif 
+               @if(isset($multiple) && $multiple) multiple @endif
+        />
     @else
         <input type="{{ $type }}"
                class="form-control @if(isset($inputClass)){{ $inputClass }}@endif"

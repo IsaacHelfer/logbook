@@ -75,6 +75,8 @@
 
                     <x:selectize id="tags" class="col-md-12 mb-3" multiple />
 
+                    <x:input type="file" id="pictures" class="col-md-12 mb-3" />
+
                     <x:form-submit route="logbook.index" value="Save" />
                 </div>
             </form>
