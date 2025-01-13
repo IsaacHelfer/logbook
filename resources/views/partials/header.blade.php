@@ -20,7 +20,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTools" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span><i class="fa-solid fa-gear fa-lg"></i></span>
+                            <span><i class="fa-solid fa-wrench"></i></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownTools">
                             <li><a class="dropdown-item" href="{{ route('tools.metar') }}">Metar</a></li>
