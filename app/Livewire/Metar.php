@@ -9,10 +9,10 @@ use Livewire\Component;
 
 class Metar extends Component
 {
-    #[Validate('required')]
+    #[Validate('required|min:1|max:4')]
     public $icao = '';
 
-    public $metar = '';
+    public $metar = [];
 
     public function render()
     {
@@ -21,12 +21,18 @@ class Metar extends Component
 
     public function getMetar()
     {
+        $this->validate();
+
         $response = Http::get('https://aviationweather.gov/api/data/metar', [
             'ids' => $this->icao,
+            'format' => 'json',
+            'taf' => true,
         ]);
 
+        \Log::debug($response->json());
+
         if ($response->successful()) {
-            $this->metar = $response->body();
+            $this->metar = $response->json();
         }
     }
 }
