@@ -30,8 +30,6 @@
         </div>
     </form>
 
-{{--    @if(!empty($metar)) @dump($metar[0]) @endif--}}
-
     @if(!empty($metar))
         @foreach($metar as $data)
             @php
