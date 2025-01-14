@@ -31,6 +31,7 @@
     </form>
 
     @if(!empty($metar))
+{{--        @dump($metar[0])--}}
         @foreach($metar as $data)
             @php
                 $metar_time = Carbon::parse($data['obsTime']);
@@ -110,12 +111,20 @@
                                     <strong>{{ round($data['dewp']) }} &deg; C</strong>
                                 </div>
                             </div>
-                            <div class="d-flex col-md-12">
+                            <div class="d-flex col-md-12 mb-4">
                                 <div class="me-2">
                                     <i class="fas fa-tachometer-alt fa-2xl"></i>
                                 </div>
                                 <div>
                                     <strong>{{ number_format((int)$data['altim'] / 33.8639, 2) . ' inHg' }}</strong>
+                                </div>
+                            </div>
+                            <div class="d-flex col-md-12">
+                                <div class="me-2">
+                                    <i class="fas fa-file-alt fa-2xl blurred"></i>
+                                </div>
+                                <div>
+                                    <strong>{{ $data['rawOb'] }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -125,3 +134,5 @@
         @endforeach
     @endif
 </div>
+
+
