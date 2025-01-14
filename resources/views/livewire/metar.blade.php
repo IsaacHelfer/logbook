@@ -33,7 +33,6 @@
 {{--    @if(!empty($metar)) @dump($metar[0]) @endif--}}
 
     @if(!empty($metar))
-        <h1>Metar</h1>
         @foreach($metar as $data)
             @php
                 $metar_time = Carbon::parse($data['obsTime']);
