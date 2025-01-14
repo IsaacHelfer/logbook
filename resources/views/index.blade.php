@@ -7,14 +7,12 @@
     <img src="https://drive.google.com/thumbnail?id=1nFhKx3hcJgkbGq12FMm_rpfUMUtQSG_W" alt="..." class="rounded float-left">
 
     {{--  Remove before LIVE  --}}
-    {{--  add  list-group-item-success when done --}}
     <div class="mt-3">
         <h4>TODO</h4>
         <ul class="list-group">
-            <li class="list-group-item list-group-item-action active">Refactors on input component</li>
+            <li class="list-group-item list-group-item-action">Refactors on input component</li>
             <li class="list-group-item list-group-item-action">Implementation of entry tags</li>
             <li class="list-group-item list-group-item-action">Implementation of entry pictures</li>
-            <li class="list-group-item list-group-item-action">Implementation of metar tool</li>
             <li class="list-group-item list-group-item-action">Implementation of dark mode</li>
         </ul>
     </div>
