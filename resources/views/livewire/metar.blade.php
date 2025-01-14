@@ -30,9 +30,11 @@
         </div>
     </form>
 
+    @if(!empty($metar)) @dump($metar[0]) @endif
+
     @foreach($metar as $data)
         @php
-            $metar_time = Carbon::parse($data['receiptTime']);
+            $metar_time = Carbon::parse($data['reportTime']);
         @endphp
 
         <div class="row">
@@ -71,11 +73,11 @@
                         </div>
                         <div class="col-md-12 mb-4">
                             <i class="fa-solid fa-temperature-full fa-2xl"></i>
-                            <strong>{{ $data['temp'] }} &deg; C</strong>
+                            <strong>{{ round($data['temp']) }} &deg; C</strong>
                         </div>
                         <div class="col-md-12 mb-4">
                             <i class="fas fa-droplet fa-2xl"></i>
-                            <strong>{{ $data['dewp'] }} &deg; C</strong>
+                            <strong>{{ round($data['dewp']) }} &deg; C</strong>
                         </div>
                         <div class="col-md-12">
                             <i class="fas fa-tachometer-alt fa-2xl"></i>
